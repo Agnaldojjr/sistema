@@ -351,7 +351,7 @@ export default function MobileWorkspace({
     <div className="w-full bg-[#FAF8F5] pb-24 font-sans animate-fade-in text-zinc-800">
       
       {/* EXCLUSIVE MOBILE WORKSPACE HEADER */}
-      <div className="bg-[#8B0000] text-[#FAF8F5] p-5 shadow-lg border-b border-[#C09553]/30 rounded-t-2xl">
+      <div className="bg-[#4E1119] text-[#FAF8F5] p-5 shadow-lg border-b border-[#C09553]/30 rounded-t-2xl">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-[#FAF8F5]/10 flex items-center justify-center border border-[#C09553]/30">
@@ -365,7 +365,7 @@ export default function MobileWorkspace({
           <button 
             type="button"
             onClick={onExitMobile}
-            className="text-xs bg-[#FAF8F5] text-[#8B0000] font-bold px-3 py-1.5 rounded-lg border border-[#C09553] hover:bg-[#F3EFE9] transition-all cursor-pointer shadow-sm active:scale-95"
+            className="text-xs bg-[#FAF8F5] text-[#4E1119] font-bold px-3 py-1.5 rounded-lg border border-[#C09553] hover:bg-[#F3EFE9] transition-all cursor-pointer shadow-sm active:scale-95"
           >
             Sair do Celular
           </button>
@@ -400,7 +400,7 @@ export default function MobileWorkspace({
           }}
           className={`py-3.5 text-xs font-bold uppercase tracking-wider transition-all border-b-2 flex items-center justify-center gap-2 ${
             activeTab === 'leads'
-              ? 'border-[#8B0000] text-[#8B0000] bg-[#FAF8F5]/50'
+              ? 'border-[#4E1119] text-[#4E1119] bg-[#FAF8F5]/50'
               : 'border-transparent text-zinc-400 hover:text-zinc-600'
           }`}
         >
@@ -413,7 +413,7 @@ export default function MobileWorkspace({
           }}
           className={`py-3.5 text-xs font-bold uppercase tracking-wider transition-all border-b-2 flex items-center justify-center gap-2 ${
             activeTab === 'camera'
-              ? 'border-[#8B0000] text-[#8B0000] bg-[#FAF8F5]/50'
+              ? 'border-[#4E1119] text-[#4E1119] bg-[#FAF8F5]/50'
               : 'border-transparent text-zinc-400 hover:text-zinc-600'
           }`}
         >
@@ -428,10 +428,10 @@ export default function MobileWorkspace({
         {activeTab === 'leads' && (
           <div className="space-y-6">
             
-            <div className="bg-[#8B0000]/5 border border-[#C09553]/20 p-4 rounded-xl flex items-start gap-3">
+            <div className="bg-[#4E1119]/5 border border-[#C09553]/20 p-4 rounded-xl flex items-start gap-3">
               <Sparkles className="w-5 h-5 text-[#C09553] mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-[#8B0000] uppercase tracking-wide">Cadastro Exclusivo via WhatsApp</p>
+                <p className="text-xs font-bold text-[#4E1119] uppercase tracking-wide">Cadastro Exclusivo via WhatsApp</p>
                 <p className="text-[11.5px] text-zinc-600 leading-relaxed mt-0.5">
                   Recebeu um lead ou contato no WhatsApp e precisa salvar agora? Digite o nome, escolha o horário e gere o lembrete de confirmação de forma ultra rápida.
                 </p>
@@ -460,7 +460,7 @@ export default function MobileWorkspace({
 
             {/* QUICK LEAD FORM */}
             <form onSubmit={handleQuickLeadSubmit} className="bg-white border border-[#E6DEC9] rounded-2xl p-5 shadow-sm space-y-4">
-              <h2 className="text-sm font-bold text-[#8B0000] uppercase tracking-wide border-b border-[#FAF8F5] pb-2 flex items-center gap-2">
+              <h2 className="text-sm font-bold text-[#4E1119] uppercase tracking-wide border-b border-[#FAF8F5] pb-2 flex items-center gap-2">
                 <User className="w-4 h-4 text-[#C09553]" />
                 Ficha de Cadastro Rápido
               </h2>
@@ -477,7 +477,7 @@ export default function MobileWorkspace({
                     placeholder="Ex: AGNALDO FERREIRA FILHO"
                     value={leadName}
                     onChange={(e) => setLeadName(e.target.value.toUpperCase())}
-                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] rounded-xl pl-10 pr-3.5 py-3 text-sm font-medium focus:outline-none transition-all placeholder:text-zinc-400"
+                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] focus:ring-1 focus:ring-[#4E1119] rounded-xl pl-10 pr-3.5 py-3 text-sm font-medium focus:outline-none transition-all placeholder:text-zinc-400"
                   />
                 </div>
               </div>
@@ -493,7 +493,7 @@ export default function MobileWorkspace({
                     placeholder="Ex: 5511999998888"
                     value={leadPhone}
                     onChange={(e) => setLeadPhone(e.target.value)}
-                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] rounded-xl pl-10 pr-3.5 py-3 text-sm focus:outline-none transition-all placeholder:text-zinc-400"
+                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] focus:ring-1 focus:ring-[#4E1119] rounded-xl pl-10 pr-3.5 py-3 text-sm focus:outline-none transition-all placeholder:text-zinc-400"
                   />
                 </div>
               </div>
@@ -510,7 +510,7 @@ export default function MobileWorkspace({
                       required
                       value={leadDate}
                       onChange={(e) => setLeadDate(e.target.value)}
-                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-xl pl-8 pr-2 py-2.5 text-xs focus:outline-none"
+                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-xl pl-8 pr-2 py-2.5 text-xs focus:outline-none"
                     />
                   </div>
                 </div>
@@ -526,7 +526,7 @@ export default function MobileWorkspace({
                       required
                       value={leadTime}
                       onChange={(e) => setLeadTime(e.target.value)}
-                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-xl pl-8 pr-2 py-2.5 text-xs focus:outline-none"
+                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-xl pl-8 pr-2 py-2.5 text-xs focus:outline-none"
                     />
                   </div>
                 </div>
@@ -566,14 +566,14 @@ export default function MobileWorkspace({
                   rows={2}
                   value={leadNotes}
                   onChange={(e) => setLeadNotes(e.target.value)}
-                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-xl p-3 text-xs focus:outline-none font-medium text-zinc-600"
+                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-xl p-3 text-xs focus:outline-none font-medium text-zinc-600"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitingLead}
-                className="w-full flex items-center justify-center gap-2 bg-[#8B0000] text-white font-bold py-3 px-4 rounded-xl shadow-md cursor-pointer transition-colors hover:bg-[#6c1b26] disabled:opacity-50 text-sm mt-3"
+                className="w-full flex items-center justify-center gap-2 bg-[#4E1119] text-white font-bold py-3 px-4 rounded-xl shadow-md cursor-pointer transition-colors hover:bg-[#6c1b26] disabled:opacity-50 text-sm mt-3"
               >
                 {isSubmitingLead ? (
                   <>
@@ -593,7 +593,7 @@ export default function MobileWorkspace({
             {quickLeads.length > 0 && (
               <div className="bg-white border border-[#E6DEC9] rounded-2xl p-5 shadow-sm space-y-3">
                 <div className="flex items-center justify-between border-b border-[#FAF8F5] pb-2">
-                  <h3 className="text-xs font-bold text-[#8B0000] uppercase tracking-wider flex items-center gap-1.5">
+                  <h3 className="text-xs font-bold text-[#4E1119] uppercase tracking-wider flex items-center gap-1.5">
                     <Clock className="w-4 h-4 text-[#C09553]" />
                     Leads Recorrentes / Recentes
                   </h3>
@@ -634,7 +634,7 @@ export default function MobileWorkspace({
                               onNewProposalForPatient(item.name);
                               setActiveTab('camera');
                             }}
-                            className="bg-[#FAF8F5] text-zinc-700 hover:text-[#8B0000] border border-zinc-200 p-1.5 rounded-lg active:scale-95 transition-all cursor-pointer"
+                            className="bg-[#FAF8F5] text-zinc-700 hover:text-[#4E1119] border border-zinc-200 p-1.5 rounded-lg active:scale-95 transition-all cursor-pointer"
                             title="Tirar foto para este paciente"
                           >
                             <Camera className="w-3.5 h-3.5" />
@@ -675,7 +675,7 @@ export default function MobileWorkspace({
                   }}
                   className={`py-2 px-1 text-[10px] font-bold rounded-lg border uppercase tracking-wider text-center transition-all cursor-pointer ${
                     activeCameraSection === 'upper'
-                      ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-xs'
+                      ? 'bg-[#4E1119] text-white border-[#4E1119] shadow-xs'
                       : 'bg-zinc-50 text-zinc-600 border-zinc-200'
                   }`}
                 >
@@ -688,7 +688,7 @@ export default function MobileWorkspace({
                   }}
                   className={`py-2 px-1 text-[10px] font-bold rounded-lg border uppercase tracking-wider text-center transition-all cursor-pointer ${
                     activeCameraSection === 'smile'
-                      ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-xs'
+                      ? 'bg-[#4E1119] text-white border-[#4E1119] shadow-xs'
                       : 'bg-zinc-50 text-zinc-600 border-zinc-200'
                   }`}
                 >
@@ -701,7 +701,7 @@ export default function MobileWorkspace({
                   }}
                   className={`py-2 px-1 text-[10px] font-bold rounded-lg border uppercase tracking-wider text-center transition-all cursor-pointer ${
                     activeCameraSection === 'lower'
-                      ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-xs'
+                      ? 'bg-[#4E1119] text-white border-[#4E1119] shadow-xs'
                       : 'bg-zinc-50 text-zinc-600 border-zinc-200'
                   }`}
                 >
@@ -777,7 +777,7 @@ export default function MobileWorkspace({
                       title="Capturar snap!"
                     >
                       <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                        <Camera className="w-6 h-6 text-[#8B0000]" />
+                        <Camera className="w-6 h-6 text-[#4E1119]" />
                       </div>
                     </button>
 
@@ -799,7 +799,7 @@ export default function MobileWorkspace({
                           <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 px-4">
                             <button
                               onClick={() => startLiveCamera()}
-                              className="bg-[#8B0000] hover:bg-[#6c1b26] border border-[#C09553] text-[#FAF8F5] text-[11px] font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-lg active:scale-95 transition-all cursor-pointer"
+                              className="bg-[#4E1119] hover:bg-[#6c1b26] border border-[#C09553] text-[#FAF8F5] text-[11px] font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-lg active:scale-95 transition-all cursor-pointer"
                             >
                               <Camera className="w-3.5 h-3.5" />
                               <span>Deletar e Refazer</span>
@@ -816,7 +816,7 @@ export default function MobileWorkspace({
                     } else {
                       return (
                         <div className="space-y-4 animate-fade-in">
-                          <picture className="w-14 h-14 rounded-full bg-[#8B0000] text-white flex items-center justify-center mx-auto border border-[#C09553]/40 shadow-md">
+                          <picture className="w-14 h-14 rounded-full bg-[#4E1119] text-white flex items-center justify-center mx-auto border border-[#C09553]/40 shadow-md">
                             <Camera className="w-6 h-6 text-[#C09553]" />
                           </picture>
                           <div>
@@ -831,7 +831,7 @@ export default function MobileWorkspace({
                           <div className="flex justify-center gap-2 pt-2">
                             <button
                               onClick={() => startLiveCamera()}
-                              className="bg-[#8B0000] hover:bg-[#6c1b26] border border-[#C09553] text-white font-bold py-2.5 px-5 text-xs rounded-xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-md"
+                              className="bg-[#4E1119] hover:bg-[#6c1b26] border border-[#C09553] text-white font-bold py-2.5 px-5 text-xs rounded-xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-md"
                             >
                               <Camera className="w-4 h-4 text-[#C09553]" />
                               <span>Iniciar Câmera</span>
@@ -868,7 +868,7 @@ export default function MobileWorkspace({
 
                 return (
                   <div className="bg-white border border-[#E6DEC9] rounded-2xl p-5 shadow-sm space-y-3 animate-fade-in">
-                    <h4 className="text-xs font-bold text-[#8B0000] uppercase tracking-wider flex items-center gap-1.5">
+                    <h4 className="text-xs font-bold text-[#4E1119] uppercase tracking-wider flex items-center gap-1.5">
                       <ImageIcon className="w-4 h-4 text-[#C09553]" />
                       Sincronização com Prontuário do Paciente
                     </h4>
@@ -882,7 +882,7 @@ export default function MobileWorkspace({
                         <button
                           onClick={() => handleUploadToDrive(secId)}
                           disabled={isLoading}
-                          className="w-full py-3 bg-[#FAF8F5] text-[#8B0000] border-2 border-[#C09553] hover:bg-[#F3EFE9] text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95 cursor-pointer flex justify-center items-center gap-2"
+                          className="w-full py-3 bg-[#FAF8F5] text-[#4E1119] border-2 border-[#C09553] hover:bg-[#F3EFE9] text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95 cursor-pointer flex justify-center items-center gap-2"
                         >
                           {isLoading ? (
                             <>
@@ -921,7 +921,7 @@ export default function MobileWorkspace({
 
             {/* DENTAL ARCH STATUS GRID */}
             <div className="bg-white border border-[#E6DEC9] rounded-2xl p-5 shadow-sm space-y-3">
-              <h3 className="text-xs font-bold text-[#8B0000] uppercase tracking-wider pb-2 border-b border-[#FAF8F5]">
+              <h3 className="text-xs font-bold text-[#4E1119] uppercase tracking-wider pb-2 border-b border-[#FAF8F5]">
                 Galeria Clínica Atual do Tratamento
               </h3>
               

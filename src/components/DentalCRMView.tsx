@@ -1534,41 +1534,39 @@ export default function DentalCRMView({
   };
 
   return (
-    <div className="space-y-6 animate-fade-in-up text-zinc-800">
-
-      {/* ── CRM Header Bar ─────────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <div className="space-y-8 animate-fade-in text-zinc-800">
+      
+      {/* Upper Module Menu Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white border border-[#E6DEC9] p-4 rounded-xl shadow-xs">
         <div>
-          <h2 className="text-2xl font-bold text-zinc-800 flex items-center gap-2" style={{ fontFamily: 'Playfair Display, serif' }}>
-            <span className="w-8 h-8 rounded-lg bg-[#8B0000] flex items-center justify-center flex-shrink-0">
-              <ClipboardList className="w-4.5 h-4.5 text-white" />
-            </span>
-            Gestão de Pacientes
+          <h2 className="text-xl font-serif font-semibold text-[#4E1119] flex items-center gap-2 select-none">
+            <ClipboardList className="w-5.5 h-5.5 text-[#C09553]" />
+            <span>CRM Odontológico & Central de Importação Inteligente</span>
           </h2>
-          <p className="text-sm text-zinc-500 mt-1 ml-10">
-            {patients.length} paciente{patients.length !== 1 ? 's' : ''} cadastrado{patients.length !== 1 ? 's' : ''} · Sincronizado com Google Drive
+          <p className="text-xs text-zinc-500 mt-0.5">
+            Importe tabelas históricas do seu sistema antigo. O CRM analisa, consolida duplicados e agrupa todo o histórico em uma ficha unificada.
           </p>
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        {/* Mini Tab switcher */}
+        <div className="flex bg-[#FAF8F5] border border-zinc-200 rounded-lg p-0.5 self-stretch md:self-auto">
           <button
-            onClick={() => setActiveSubTab(activeSubTab === 'import' ? 'crm' : 'import')}
-            className={`flex items-center gap-2 px-4 py-2 text-[12px] font-semibold rounded-xl border transition-all ${
-              activeSubTab === 'import'
-                ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-md'
-                : 'bg-white text-zinc-600 border-zinc-200 hover:border-[#8B0000] hover:text-[#8B0000]'
+            onClick={() => setActiveSubTab('import')}
+            className={`flex-1 md:flex-none flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wide rounded-md transition-all cursor-pointer ${
+              activeSubTab === 'import' ? 'bg-[#4E1119] text-[#FAF8F5] shadow-2xs' : 'text-zinc-505 hover:bg-zinc-100 hover:text-zinc-800'
             }`}
           >
-            <Upload className="w-3.5 h-3.5" />
-            {activeSubTab === 'import' ? 'Ver CRM' : 'Importar Dados'}
+            <Upload className="w-4 h-4" />
+            <span>1. Importar Planilha</span>
           </button>
           <button
-            onClick={() => setIsAddingPatient(true)}
-            className="flex items-center gap-2 px-4 py-2 text-[12px] font-semibold rounded-xl bg-[#C09553] text-white border border-[#C09553] shadow-md hover:bg-[#A97E3B] transition-all"
+            onClick={() => setActiveSubTab('crm')}
+            className={`flex-1 md:flex-none flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wide rounded-md transition-all cursor-pointer ${
+              activeSubTab === 'crm' ? 'bg-[#4E1119] text-[#FAF8F5] shadow-2xs' : 'text-zinc-505 hover:bg-zinc-100 hover:text-zinc-800'
+            }`}
           >
-            <Plus className="w-3.5 h-3.5" />
-            Novo Paciente
+            <User className="w-4 h-4" />
+            <span>2. CRM Pacientes ({patients.length})</span>
           </button>
         </div>
       </div>
@@ -1582,10 +1580,10 @@ export default function DentalCRMView({
             <div className="lg:col-span-7 space-y-6">
               
               {importStatus === 'idle' && (
-                <div className="bg-white border-2 border-dashed border-[#C09553]/40 rounded-2xl p-8 hover:border-[#8B0000]/60 transition-all bg-radial-gradient">
+                <div className="bg-white border-2 border-dashed border-[#C09553]/40 rounded-2xl p-8 hover:border-[#4E1119]/60 transition-all bg-radial-gradient">
                   <div 
                     className={`flex flex-col items-center justify-center p-6 text-center select-none rounded-xl relative ${
-                      dragActive ? 'bg-[#FAF8F5] scale-102 border-[#8B0000]' : ''
+                      dragActive ? 'bg-[#FAF8F5] scale-102 border-[#4E1119]' : ''
                     }`}
                     onDragEnter={handleDrag}
                     onDragOver={handleDrag}
@@ -1605,7 +1603,7 @@ export default function DentalCRMView({
                       <FileSpreadsheet className="w-8 h-8" />
                     </div>
 
-                    <h3 className="font-serif font-bold text-base text-[#8B0000]">Importar Novo Arquivo (Planilha de Pacientes)</h3>
+                    <h3 className="font-serif font-bold text-base text-[#4E1119]">Importar Novo Arquivo (Planilha de Pacientes)</h3>
                     <p className="text-xs text-zinc-400 max-w-sm mt-1 mx-auto leading-relaxed">
                       Arraste e solte seu arquivo <b>XLSX, XLS ou CSV</b> aqui, ou clique abaixo para procurar no computador.
                     </p>
@@ -1615,7 +1613,7 @@ export default function DentalCRMView({
                         type="button"
                         onClick={() => fileInputRef.current?.click()}
                         disabled={importing}
-                        className="px-5 py-2.5 bg-[#8B0000] hover:bg-[#a32c3d] text-[#FAF8F5] text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-sm hover:-translate-y-0.5 disabled:opacity-50 flex items-center gap-1.5"
+                        className="px-5 py-2.5 bg-[#4E1119] hover:bg-[#a32c3d] text-[#FAF8F5] text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-sm hover:-translate-y-0.5 disabled:opacity-50 flex items-center gap-1.5"
                       >
                         <Upload className="w-3.5 h-3.5" />
                         Procurar Arquivo
@@ -1634,14 +1632,14 @@ export default function DentalCRMView({
               {importStatus === 'loaded' && (
                 <div className="bg-white border border-[#E6DEC9] rounded-2xl p-6 shadow-sm space-y-6 animate-fade-in">
                   <div>
-                    <h3 className="text-[#8B0000] font-serif font-bold text-lg mb-1">Mapeamento de Colunas</h3>
+                    <h3 className="text-[#4E1119] font-serif font-bold text-lg mb-1">Mapeamento de Colunas</h3>
                     <p className="text-sm text-zinc-500 leading-relaxed">Para salvar os dados perfeitamente no CRM, indique qual coluna da sua planilha corresponde a cada campo do sistema.</p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* Campo Nome */}
                     <div>
-                      <label className="block text-[#8B0000] text-sm font-bold mb-1.5">
+                      <label className="block text-[#4E1119] text-sm font-bold mb-1.5">
                         1. Nome do Paciente <span className="text-red-500">*</span>
                       </label>
                       <select 
@@ -1754,7 +1752,7 @@ export default function DentalCRMView({
               {importing && (
                 <div className="bg-white border border-[#E6DEC9] p-5 rounded-xl shadow-xs space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-bold text-[#8B0000] flex items-center gap-1.5 uppercase tracking-wide">
+                    <span className="text-xs font-bold text-[#4E1119] flex items-center gap-1.5 uppercase tracking-wide">
                       <Loader2 className="w-4 h-4 text-[#C09553] animate-spin" />
                       Processando e Consolidando Arquivo...
                     </span>
@@ -1762,7 +1760,7 @@ export default function DentalCRMView({
                   </div>
                   <div className="w-full bg-zinc-100 h-2 rounded-full overflow-hidden">
                     <div 
-                      className="bg-gradient-to-r from-[#8B0000] to-[#C09553] h-full transition-all duration-300" 
+                      className="bg-gradient-to-r from-[#4E1119] to-[#C09553] h-full transition-all duration-300" 
                       style={{ width: `${importProgress}%` }}
                     />
                   </div>
@@ -1778,7 +1776,7 @@ export default function DentalCRMView({
                   <div className="flex items-center gap-2 pb-3 border-b border-emerald-500/10">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600" />
                     <div>
-                      <h4 className="font-serif font-bold text-sm text-[#8B0000]">Importação Concluída com Sucesso!</h4>
+                      <h4 className="font-serif font-bold text-sm text-[#4E1119]">Importação Concluída com Sucesso!</h4>
                       <p className="text-[10px] text-zinc-400 uppercase font-semibold">Os dados já foram salvos estruturadamente</p>
                     </div>
                   </div>
@@ -1798,15 +1796,15 @@ export default function DentalCRMView({
                     </div>
                     <div className="bg-white border border-[#E6DEC9] p-3 rounded-xl shadow-2xs">
                       <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest block">Consultas Vinculadas</span>
-                      <span className="text-base font-serif font-bold text-[#8B0000]">{importSummary.appointmentsLinked}</span>
+                      <span className="text-base font-serif font-bold text-[#4E1119]">{importSummary.appointmentsLinked}</span>
                     </div>
                     <div className="bg-white border border-[#E6DEC9] p-3 rounded-xl shadow-2xs">
                       <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest block">Históricos Clínicos</span>
-                      <span className="text-base font-serif font-bold text-[#8B0000]">{importSummary.clinicalsLinked}</span>
+                      <span className="text-base font-serif font-bold text-[#4E1119]">{importSummary.clinicalsLinked}</span>
                     </div>
                     <div className="bg-white border border-[#E6DEC9] p-3 rounded-xl shadow-2xs">
                       <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest block">Comunicações</span>
-                      <span className="text-base font-serif font-bold text-[#8B0000]">{importSummary.communicationsLinked}</span>
+                      <span className="text-base font-serif font-bold text-[#4E1119]">{importSummary.communicationsLinked}</span>
                     </div>
                   </div>
 
@@ -1877,7 +1875,7 @@ export default function DentalCRMView({
                         onClick={() => setLogFilter('ALL')}
                         className={`px-2 py-0.5 text-[9px] font-mono font-bold rounded-xs transition-all cursor-pointer ${
                           logFilter === 'ALL'
-                            ? 'bg-[#C09553] text-[#8B0000] shadow-inner'
+                            ? 'bg-[#C09553] text-[#4E1119] shadow-inner'
                             : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200'
                         }`}
                       >
@@ -1975,7 +1973,7 @@ export default function DentalCRMView({
 
             {/* Right side column: Guidance explaining automatic data mappings */}
             <div className="lg:col-span-5 bg-white border border-[#E6DEC9] p-6 rounded-2xl shadow-sm space-y-5">
-              <h4 className="font-serif font-bold text-sm text-[#8B0000] uppercase tracking-wide flex items-center gap-2 border-b border-[#FAF8F5] pb-2">
+              <h4 className="font-serif font-bold text-sm text-[#4E1119] uppercase tracking-wide flex items-center gap-2 border-b border-[#FAF8F5] pb-2">
                 <Sparkles className="w-4 h-4 text-[#B48C4D]" />
                 Guia de Mapeamento de Colunas
               </h4>
@@ -1987,7 +1985,7 @@ export default function DentalCRMView({
                 
                 {/* Modulo Paciente */}
                 <div className="space-y-1">
-                  <span className="font-bold text-[#8B0000] flex items-center gap-1">
+                  <span className="font-bold text-[#4E1119] flex items-center gap-1">
                     <User className="w-3.5 h-3.5 text-[#C09553]" />
                     Módulo Paciente (Ficha Cadastral)
                   </span>
@@ -1998,7 +1996,7 @@ export default function DentalCRMView({
 
                 {/* Modulo Agenda */}
                 <div className="space-y-1">
-                  <span className="font-bold text-[#8B0000] flex items-center gap-1">
+                  <span className="font-bold text-[#4E1119] flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5 text-[#C09553]" />
                     Histórico de Agendamento
                   </span>
@@ -2009,7 +2007,7 @@ export default function DentalCRMView({
 
                 {/* Modulo Clinico */}
                 <div className="space-y-1">
-                  <span className="font-bold text-[#8B0000] flex items-center gap-1">
+                  <span className="font-bold text-[#4E1119] flex items-center gap-1">
                     <ClipboardList className="w-3.5 h-3.5 text-[#C09553]" />
                     Histórico Clínico & Evolução
                   </span>
@@ -2020,7 +2018,7 @@ export default function DentalCRMView({
 
                 {/* Modulo Comunicacao */}
                 <div className="space-y-1">
-                  <span className="font-bold text-[#8B0000] flex items-center gap-1">
+                  <span className="font-bold text-[#4E1119] flex items-center gap-1">
                     <MessageSquare className="w-3.5 h-3.5 text-[#C09553]" />
                     Comunicação & Mensagens
                   </span>
@@ -2072,7 +2070,7 @@ export default function DentalCRMView({
                       XLSX.utils.book_append_sheet(wb, ws, "CRM_Dentista_Modelo");
                       XLSX.writeFile(wb, "CRM_Dentista_Modelo.xlsx");
                     }}
-                    className="flex items-center justify-center gap-1 text-[11px] font-bold text-[#8B0000] hover:text-[#a32c3d] cursor-pointer"
+                    className="flex items-center justify-center gap-1 text-[11px] font-bold text-[#4E1119] hover:text-[#a32c3d] cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Modelo Planilha (XLSX)</span>
@@ -2102,7 +2100,7 @@ export default function DentalCRMView({
                     placeholder="Pesquisar paciente por nome, celular..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-[#FAF8F5] border border-zinc-200 focus:border-[#8B0000] rounded-lg pl-9 pr-3 py-2 text-xs focus:outline-none transition-all"
+                    className="w-full bg-[#FAF8F5] border border-zinc-200 focus:border-[#4E1119] rounded-lg pl-9 pr-3 py-2 text-xs focus:outline-none transition-all"
                   />
                 </div>
                 
@@ -2125,7 +2123,7 @@ export default function DentalCRMView({
                 <button
                   type="button"
                   onClick={() => setIsAddingPatient(true)}
-                  className="text-[10px] font-bold text-[#8B0000] hover:text-[#a32c3d] flex items-center gap-0.5 cursor-pointer"
+                  className="text-[10px] font-bold text-[#4E1119] hover:text-[#a32c3d] flex items-center gap-0.5 cursor-pointer"
                 >
                   <Plus className="w-3 h-3" />
                   <span>Novo Cadastro</span>
@@ -2152,7 +2150,7 @@ export default function DentalCRMView({
                       key={p.id}
                       onClick={() => setSelectedPatient(p)}
                       className={`p-3.5 text-left cursor-pointer transition-colors ${
-                        isSelected ? 'bg-[#8B0000]/5 border-l-4 border-l-[#8B0000]' : 'hover:bg-zinc-50'
+                        isSelected ? 'bg-[#4E1119]/5 border-l-4 border-l-[#4E1119]' : 'hover:bg-zinc-50'
                       }`}
                     >
                       <div className="flex justify-between items-start gap-2">
@@ -2183,7 +2181,7 @@ export default function DentalCRMView({
             {isAddingPatient && (
               <div className="fixed inset-0 z-[130] bg-black/50 flex items-center justify-center p-4">
                 <form onSubmit={handleSaveDocNewPatient} className="bg-white rounded-2xl w-full max-w-md overflow-hidden text-left shadow-xl border border-zinc-200">
-                  <div className="bg-[#8B0000] text-white p-4 font-serif font-bold text-sm">
+                  <div className="bg-[#4E1119] text-white p-4 font-serif font-bold text-sm">
                     Novo Cadastro de Paciente
                   </div>
                   <div className="p-5 space-y-3 text-xs">
@@ -2275,7 +2273,7 @@ export default function DentalCRMView({
               <div className="bg-white border border-[#E6DEC9] rounded-2xl shadow-sm overflow-hidden text-left flex flex-col min-h-[50vh]">
                 
                 {/* File Header */}
-                <div className="bg-[#8B0000] text-[#FAF8F5] p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div className="bg-[#4E1119] text-[#FAF8F5] p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-[#FAF8F5]/10 border border-[#FAF8F5]/20 flex items-center justify-center text-[#B48C4D]">
                       <User className="w-6 h-6" />
@@ -2307,7 +2305,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('info')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'info'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2318,7 +2316,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('appointments')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'appointments'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2329,7 +2327,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('anamnesis')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'anamnesis'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2340,7 +2338,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('clinical')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'clinical'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2351,7 +2349,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('communication')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'communication'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2362,7 +2360,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('financial')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'financial'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2373,7 +2371,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('docs_gallery')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'docs_gallery'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                     }`}
                   >
@@ -2384,7 +2382,7 @@ export default function DentalCRMView({
                     onClick={() => setActiveDetailTab('drive_records')}
                     className={`px-4 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap focus:outline-none cursor-pointer transition-all ${
                       activeDetailTab === 'drive_records'
-                        ? 'bg-[#8B0000] text-[#FAF8F5]'
+                        ? 'bg-[#4E1119] text-[#FAF8F5]'
                         : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 bg-amber-500/5 text-amber-900 font-semibold border-l'
                     }`}
                   >
@@ -2400,7 +2398,7 @@ export default function DentalCRMView({
                     <div className="space-y-6">
                       <div className="border-b border-zinc-100 pb-3">
                         <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">DADOS DO PACIENTE</span>
-                        <h4 className="font-serif font-bold text-lg text-[#8B0000] mt-0.5">Ficha Cadastral Geral consolidada</h4>
+                        <h4 className="font-serif font-bold text-lg text-[#4E1119] mt-0.5">Ficha Cadastral Geral consolidada</h4>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-zinc-600">
@@ -2424,7 +2422,7 @@ export default function DentalCRMView({
                           </div>
                           <div className="flex justify-between items-center">
                             <span className="font-semibold text-zinc-400">Prontuário Médico Nº:</span>
-                            <span className="font-mono bg-[#8B0000]/5 px-2 py-0.5 rounded text-[#8B0000] font-bold">{selectedPatient.medicalRecord || 'Gerado Manual'}</span>
+                            <span className="font-mono bg-[#4E1119]/5 px-2 py-0.5 rounded text-[#4E1119] font-bold">{selectedPatient.medicalRecord || 'Gerado Manual'}</span>
                           </div>
                         </div>
 
@@ -2455,7 +2453,7 @@ export default function DentalCRMView({
 
                       {/* Observations Alert */}
                       <div className="bg-[#FAF8F5]/80 border-2 border-dashed border-[#C09553]/35 p-5 rounded-xl space-y-2">
-                        <span className="text-[10px] font-bold text-[#8B0000] uppercase tracking-widest flex items-center gap-1.5">
+                        <span className="text-[10px] font-bold text-[#4E1119] uppercase tracking-widest flex items-center gap-1.5">
                           <FileText className="w-4 h-4 text-[#C09553]" />
                           Observações Diagnósticas e Recomendação Geral
                         </span>
@@ -2472,9 +2470,9 @@ export default function DentalCRMView({
                       <div className="border-b border-zinc-100 pb-3 flex justify-between items-center">
                         <div>
                           <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">DURANTE TODA A HISTÓRIA</span>
-                          <h4 className="font-serif font-bold text-lg text-[#8B0000]">Histórico de Consultas e Agendamentos</h4>
+                          <h4 className="font-serif font-bold text-lg text-[#4E1119]">Histórico de Consultas e Agendamentos</h4>
                         </div>
-                        <span className="bg-[#8B0000] text-[#FAF8F5] px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase">{appointments.length} Sessões</span>
+                        <span className="bg-[#4E1119] text-[#FAF8F5] px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase">{appointments.length} Sessões</span>
                       </div>
 
                       {appointments.length === 0 ? (
@@ -2537,9 +2535,9 @@ export default function DentalCRMView({
                       <div className="border-b border-zinc-100 pb-3 flex justify-between items-center">
                         <div>
                           <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">AVALIAÇÃO DE RISCO MÉDICO</span>
-                          <h4 className="font-serif font-bold text-lg text-[#8B0000]">Questionário Médico de Anamnese</h4>
+                          <h4 className="font-serif font-bold text-lg text-[#4E1119]">Questionário Médico de Anamnese</h4>
                         </div>
-                        <span className="bg-[#8B0000] text-[#FAF8F5] px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase">{anamneseList.length} Perguntas</span>
+                        <span className="bg-[#4E1119] text-[#FAF8F5] px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase">{anamneseList.length} Perguntas</span>
                       </div>
 
                       {anamneseList.length === 0 ? (
@@ -2573,7 +2571,7 @@ export default function DentalCRMView({
                         <div className="border-b border-zinc-100 pb-3 flex justify-between items-center">
                           <div>
                             <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">DIÁRIO MÉDICO</span>
-                            <h4 className="font-serif font-bold text-md text-[#8B0000] uppercase">Histórico e Evoluções Clínicas</h4>
+                            <h4 className="font-serif font-bold text-md text-[#4E1119] uppercase">Histórico e Evoluções Clínicas</h4>
                           </div>
                           <span className="bg-[#C09553]/20 text-zinc-800 px-2.5 py-0.5 rounded-full text-[10px] font-semibold">{clinicalHistory.length} registros</span>
                         </div>
@@ -2585,7 +2583,7 @@ export default function DentalCRMView({
                             {clinicalHistory.map((ch) => (
                               <div key={ch.id} className="bg-[#FAF8F5]/50 border border-[#E6DEC9]/60 p-4 rounded-xl text-xs space-y-2">
                                 <div className="flex justify-between items-center bg-white border border-[#E6DEC9]/30 px-2 py-1 rounded-md text-[10px] font-bold font-mono">
-                                  <span className="text-[#8B0000]">📅 {normalizeDateDisplay(ch.date)}</span>
+                                  <span className="text-[#4E1119]">📅 {normalizeDateDisplay(ch.date)}</span>
                                   {ch.recalls && <span className="text-amber-805 uppercase tracking-wide">🔁 Retorno em: {ch.recalls}</span>}
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-12 gap-3 pt-1">
@@ -2613,9 +2611,9 @@ export default function DentalCRMView({
                         <div className="border-b border-zinc-100 pb-3 flex justify-between items-center">
                           <div>
                             <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">ODONTOGRAMA COMPLETO</span>
-                            <h4 className="font-serif font-bold text-md text-[#8B0000] uppercase">Mapeamento Clínico por Elemento Dentário</h4>
+                            <h4 className="font-serif font-bold text-md text-[#4E1119] uppercase">Mapeamento Clínico por Elemento Dentário</h4>
                           </div>
-                          <span className="bg-[#8B0000]/80 text-[#FAF8F5] px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold">{odontogramaList.length} Dentes Mapeados</span>
+                          <span className="bg-[#4E1119]/80 text-[#FAF8F5] px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold">{odontogramaList.length} Dentes Mapeados</span>
                         </div>
 
                         {odontogramaList.length === 0 ? (
@@ -2627,7 +2625,7 @@ export default function DentalCRMView({
                             {odontogramaList.map((od) => (
                               <div key={od.id} className="bg-white border rounded-xl p-3 flex justify-between items-center gap-2 border-[#E6DEC9]">
                                 <div className="flex items-center gap-3">
-                                  <div className="w-9 h-9 rounded-full bg-[#8B0000] text-[#FAF8F5] flex items-center justify-center font-mono font-bold text-xs shrink-0 select-all" title="Dente número">
+                                  <div className="w-9 h-9 rounded-full bg-[#4E1119] text-[#FAF8F5] flex items-center justify-center font-mono font-bold text-xs shrink-0 select-all" title="Dente número">
                                     🦷 {od.tooth || 'E'}
                                   </div>
                                   <div>
@@ -2638,7 +2636,7 @@ export default function DentalCRMView({
                                 {od.value && (
                                   <div className="text-right shrink-0">
                                     <span className="text-[9px] uppercase text-zinc-400 font-bold block">Investimento</span>
-                                    <span className="font-mono text-xs font-bold text-[#8B0000]">{String(od.value).startsWith('R$') ? od.value : `R$ ${od.value}`}</span>
+                                    <span className="font-mono text-xs font-bold text-[#4E1119]">{String(od.value).startsWith('R$') ? od.value : `R$ ${od.value}`}</span>
                                   </div>
                                 )}
                               </div>
@@ -2650,7 +2648,7 @@ export default function DentalCRMView({
                       {/* Tratamentos e Fases Ativas */}
                       <div className="space-y-4 pt-4 border-t border-zinc-100">
                         <div className="border-b border-zinc-100 pb-3">
-                          <h4 className="font-serif font-bold text-md text-[#8B0000] uppercase">Planejamento e Fases de Tratamentos Orçados</h4>
+                          <h4 className="font-serif font-bold text-md text-[#4E1119] uppercase">Planejamento e Fases de Tratamentos Orçados</h4>
                         </div>
                         {tratamentosList.length === 0 ? (
                           <p className="text-[11px] text-zinc-400 italic">Nenhum plano de etapas estruturadas foi informado ou orçado.</p>
@@ -2697,7 +2695,7 @@ export default function DentalCRMView({
                       <div className="space-y-4">
                         <div className="border-b border-zinc-100 pb-3">
                           <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">REGISTROS DE CONTATOS</span>
-                          <h4 className="font-serif font-bold text-lg text-[#8B0000]">Confirmações e Lembretes Enviados</h4>
+                          <h4 className="font-serif font-bold text-lg text-[#4E1119]">Confirmações e Lembretes Enviados</h4>
                         </div>
                         {communications.length === 0 ? (
                           <p className="text-[11px] text-zinc-400 italic">Nenhum log de disparo de mensagens enviado a este número.</p>
@@ -2740,7 +2738,7 @@ export default function DentalCRMView({
                       {/* Notificações e Alertas Importados */}
                       <div className="space-y-4 pt-4 border-t border-zinc-100">
                         <div className="border-b border-zinc-100 pb-3">
-                          <h4 className="font-serif font-bold text-md text-[#8B0000] uppercase">Alertas e Avisos do Sistema Cadastrados</h4>
+                          <h4 className="font-serif font-bold text-md text-[#4E1119] uppercase">Alertas e Avisos do Sistema Cadastrados</h4>
                         </div>
                         {avisosList.length === 0 ? (
                           <p className="text-[11px] text-zinc-400 italic">Nenhum aviso emitido para o prontuário deste paciente.</p>
@@ -2771,7 +2769,7 @@ export default function DentalCRMView({
                       <div className="border-b border-zinc-100 pb-3 flex justify-between items-center">
                         <div>
                           <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">FINANCEIRO INTEGRADO</span>
-                          <h4 className="font-serif font-bold text-lg text-[#8B0000]">Controle de Pagamentos, Recibos e Cobrança</h4>
+                          <h4 className="font-serif font-bold text-lg text-[#4E1119]">Controle de Pagamentos, Recibos e Cobrança</h4>
                         </div>
                       </div>
 
@@ -2837,7 +2835,7 @@ export default function DentalCRMView({
                       <div className="space-y-4">
                         <div className="border-b border-zinc-100 pb-3">
                           <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">DADOS MÉDICOS DIGITALIZADOS</span>
-                          <h4 className="font-serif font-bold text-lg text-[#8B0000]">Anexos, Laudos e Atestados Clínicos</h4>
+                          <h4 className="font-serif font-bold text-lg text-[#4E1119]">Anexos, Laudos e Atestados Clínicos</h4>
                         </div>
 
                         {documentosList.length === 0 ? (
@@ -2846,7 +2844,7 @@ export default function DentalCRMView({
                           <div className="space-y-3.5">
                             {documentosList.map((d) => (
                               <div key={d.id} className="bg-white border rounded-xl p-4 border-[#E6DEC9] shadow-2xs space-y-2 text-left">
-                                <div className="flex justify-between items-center text-[10px] font-bold font-mono text-[#8B0000]">
+                                <div className="flex justify-between items-center text-[10px] font-bold font-mono text-[#4E1119]">
                                   <span>📄 Atas de Exame / {d.type}</span>
                                   <span>📅 {normalizeDateDisplay(d.date)}</span>
                                 </div>
@@ -2862,7 +2860,7 @@ export default function DentalCRMView({
                       {/* Photo Library Gallery */}
                       <div className="space-y-4 pt-4 border-t border-zinc-100">
                         <div className="border-b border-zinc-100 pb-3">
-                          <h4 className="font-serif font-bold text-md text-[#8B0000] uppercase">Galeria de Imagens de Implantes e Raio-X</h4>
+                          <h4 className="font-serif font-bold text-md text-[#4E1119] uppercase">Galeria de Imagens de Implantes e Raio-X</h4>
                         </div>
 
                         {galeriaList.length === 0 ? (
@@ -2885,7 +2883,7 @@ export default function DentalCRMView({
                                     // Beautiful fallback card
                                     <div className="flex flex-col items-center justify-center text-center p-4 text-zinc-400 space-y-1">
                                       <span className="text-3xl">🦷</span>
-                                      <span className="text-[10px] font-mono uppercase bg-[#8B0000]/5 px-2 py-0.5 rounded text-[#8B0000] font-bold">Imagem de Exame</span>
+                                      <span className="text-[10px] font-mono uppercase bg-[#4E1119]/5 px-2 py-0.5 rounded text-[#4E1119] font-bold">Imagem de Exame</span>
                                     </div>
                                   )}
                                   <div className="absolute right-2 top-2 bg-zinc-950/70 text-white text-[8px] font-mono px-1.5 py-0.5 rounded uppercase font-bold">
@@ -2911,12 +2909,12 @@ export default function DentalCRMView({
                       {/* Connection status card */}
                       <div className="p-4 bg-amber-500/5 rounded-xl border border-[#E6DEC9] text-left space-y-1.5 flex flex-col sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                          <p className="text-xs font-bold text-[#8B0000] flex items-center gap-1.5 uppercase font-mono">
+                          <p className="text-xs font-bold text-[#4E1119] flex items-center gap-1.5 uppercase font-mono">
                             <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping inline-block" />
                             Pasta do Paciente Ativa no Google Drive
                           </p>
                           <p className="text-xs text-zinc-650 mt-0.5">
-                            Diretório: <span className="font-mono font-semibold bg-[#FAF8F5] px-1.5 py-0.5 border rounded text-[#8B0000]">/Planejador Odontológico/{selectedPatient ? selectedPatient.name.replace(/[^a-zA-Z0-9 ]/g, '').trim() : ''}</span>
+                            Diretório: <span className="font-mono font-semibold bg-[#FAF8F5] px-1.5 py-0.5 border rounded text-[#4E1119]">/Planejador Odontológico/{selectedPatient ? selectedPatient.name.replace(/[^a-zA-Z0-9 ]/g, '').trim() : ''}</span>
                           </p>
                         </div>
                         {driveFolderId && (
@@ -2931,7 +2929,7 @@ export default function DentalCRMView({
                         <div className="border-b border-zinc-100 pb-3 flex justify-between items-center flex-wrap gap-2">
                           <div>
                             <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">WORKSPACE DE ORÇAMENTOS (DRIVE)</span>
-                            <h4 className="font-serif font-bold text-lg text-[#8B0000]">Planejamentos de Tratamento Gravados</h4>
+                            <h4 className="font-serif font-bold text-lg text-[#4E1119]">Planejamentos de Tratamento Gravados</h4>
                           </div>
 
                           <button
@@ -3013,7 +3011,7 @@ export default function DentalCRMView({
                                   <button
                                     type="button"
                                     onClick={() => deleteDriveProposalFile(prop.id)}
-                                    className="p-1 px-2 text-[10px] font-bold hover:bg-[#FAF8F5] border rounded text-[#8B0000] border-transparent hover:border-[#E6DEC9] transition-colors cursor-pointer flex items-center gap-1"
+                                    className="p-1 px-2 text-[10px] font-bold hover:bg-[#FAF8F5] border rounded text-[#4E1119] border-transparent hover:border-[#E6DEC9] transition-colors cursor-pointer flex items-center gap-1"
                                     title="Excluir arquivo do Drive"
                                   >
                                     <Trash2 className="w-3 h-3" />
@@ -3023,7 +3021,7 @@ export default function DentalCRMView({
                                     type="button"
                                     disabled={isLoadingProposalAction !== null}
                                     onClick={() => handleLoadProposalIntoWorkspace(prop.id)}
-                                    className="p-1.5 px-3 bg-[#8B0000] hover:bg-[#a32c3d] text-[#FAF8F5] text-[10px] font-bold uppercase tracking-wider rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 disabled:opacity-50"
+                                    className="p-1.5 px-3 bg-[#4E1119] hover:bg-[#a32c3d] text-[#FAF8F5] text-[10px] font-bold uppercase tracking-wider rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 disabled:opacity-50"
                                   >
                                     {isLoadingProposalAction === prop.id ? (
                                       <Loader2 className="w-3 h-3 animate-spin" />
@@ -3044,7 +3042,7 @@ export default function DentalCRMView({
                         <div className="border-b border-zinc-100 pb-3 flex justify-between items-center flex-wrap gap-2">
                           <div>
                             <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider font-mono">BIBLIOTECA DE IMAGENS NA NUVEM (DRIVE)</span>
-                            <h4 className="font-serif font-bold text-lg text-[#8B0000]">Raio-X, Tomografias e Fotos Clínicas</h4>
+                            <h4 className="font-serif font-bold text-lg text-[#4E1119]">Raio-X, Tomografias e Fotos Clínicas</h4>
                           </div>
 
                           <div className="flex gap-2">
@@ -3064,7 +3062,7 @@ export default function DentalCRMView({
                             <button
                               type="button"
                               onClick={isCameraActive ? () => { setIsCameraActive(false); stopCameraStream(); } : startCamera}
-                              className="px-3.5 py-2 bg-[#8B0000] hover:bg-[#a32c3d] text-white font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all flex items-center gap-1 cursor-pointer active:scale-95"
+                              className="px-3.5 py-2 bg-[#4E1119] hover:bg-[#a32c3d] text-white font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all flex items-center gap-1 cursor-pointer active:scale-95"
                             >
                               <Camera className="w-3.5 h-3.5" />
                               {isCameraActive ? 'Desligar Câmera' : 'Adquirir via Webcam'}

@@ -412,7 +412,7 @@ export default function ClinicalAttendanceManager({
       {/* Header and status banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#E6DEC9]/60 pb-5">
         <div>
-          <h2 className="text-lg font-serif font-bold text-[#8B0000] flex items-center gap-2">
+          <h2 className="text-lg font-serif font-bold text-[#4E1119] flex items-center gap-2">
             <ClipboardList className="w-5 h-5 text-[#C09553]" />
             <span>Administrar Atendimentos de cada Procedimento</span>
           </h2>
@@ -446,7 +446,7 @@ export default function ClinicalAttendanceManager({
 
           <div className="bg-white border border-[#E6DEC9] px-3 py-2 rounded-xl text-center shadow-2xs">
             <div className="text-[9px] uppercase font-bold text-zinc-400">Total</div>
-            <div className="text-xs font-bold text-[#8B0000]">{allInstances.length} procs</div>
+            <div className="text-xs font-bold text-[#4E1119]">{allInstances.length} procs</div>
           </div>
 
           <div className="bg-white border border-[#E6DEC9] px-3 py-2 rounded-xl text-center shadow-2xs">
@@ -459,7 +459,7 @@ export default function ClinicalAttendanceManager({
       {allInstances.length === 0 ? (
         <div className="text-center py-12 px-4 border border-dashed border-[#D5CBB3] rounded-xl bg-white space-y-2">
           <AlertCircle className="w-8 h-8 text-[#B48C4D] mx-auto animate-pulse" />
-          <h4 className="font-serif font-bold text-[#8B0000] text-sm">Nenhum procedimento mapeado</h4>
+          <h4 className="font-serif font-bold text-[#4E1119] text-sm">Nenhum procedimento mapeado</h4>
           <p className="text-xs text-zinc-400 max-w-md mx-auto">
             Por favor, selecione dentes no odontograma acima e associe procedimentos clínicos para habilitar o controle de atendimentos.
           </p>
@@ -541,7 +541,7 @@ export default function ClinicalAttendanceManager({
                           className={`w-20 px-1.5 py-1 text-xs rounded border text-right font-semibold font-mono focus:outline-none transition-all ${
                             isPriceLocked 
                               ? 'bg-zinc-50 border-transparent text-zinc-600 select-none' 
-                              : 'bg-white border-[#C09553] text-[#8B0000] ring-1 ring-[#C09553]/20'
+                              : 'bg-white border-[#C09553] text-[#4E1119] ring-1 ring-[#C09553]/20'
                           }`}
                         />
                         <button
@@ -595,7 +595,7 @@ export default function ClinicalAttendanceManager({
                       <button
                         type="button"
                         onClick={() => openEditModal(inst)}
-                        className="p-1.5 hover:bg-zinc-105 rounded-lg border border-zinc-200 hover:border-[#C09553]/70 hover:text-[#8B0000] transition-all bg-white text-zinc-600 inline-flex items-center justify-center cursor-pointer"
+                        className="p-1.5 hover:bg-zinc-105 rounded-lg border border-zinc-200 hover:border-[#C09553]/70 hover:text-[#4E1119] transition-all bg-white text-zinc-600 inline-flex items-center justify-center cursor-pointer"
                         title="Editar detalhes completos"
                       >
                         <Edit className="w-3.5 h-3.5" />
@@ -622,7 +622,7 @@ export default function ClinicalAttendanceManager({
         <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col text-left border border-zinc-150 max-h-[90vh]">
             {/* Modal Header */}
-            <div className="bg-[#8B0000] text-[#FAF8F5] p-5 flex justify-between items-center select-none">
+            <div className="bg-[#4E1119] text-[#FAF8F5] p-5 flex justify-between items-center select-none">
               <div className="flex items-center gap-2">
                 <Edit className="w-5 h-5 text-[#C09553]" />
                 <div>
@@ -650,7 +650,7 @@ export default function ClinicalAttendanceManager({
                   type="text"
                   value={editingInstance.name}
                   onChange={(e) => setEditingInstance({ ...editingInstance, name: e.target.value })}
-                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none transition-all"
+                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none transition-all"
                 />
               </div>
 
@@ -666,7 +666,7 @@ export default function ClinicalAttendanceManager({
                       const num = parseInt(e.target.value) || 11;
                       setEditingInstance({ ...editingInstance, toothNumber: num });
                     }}
-                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
+                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
                   >
                     {/* Generate all standard tooth numbers */}
                     {[18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28,48,47,46,45,44,43,42,41,31,32,33,34,35,36,37,38].map((t) => (
@@ -692,7 +692,7 @@ export default function ClinicalAttendanceManager({
                       type="number"
                       value={editingInstance.price}
                       onChange={(e) => setEditingInstance({ ...editingInstance, price: parseFloat(e.target.value) || 0 })}
-                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg pl-8 pr-3 py-2 text-xs font-semibold font-mono focus:outline-none"
+                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg pl-8 pr-3 py-2 text-xs font-semibold font-mono focus:outline-none"
                     />
                   </div>
                 </div>
@@ -703,7 +703,7 @@ export default function ClinicalAttendanceManager({
                   <select
                     value={editingInstance.status}
                     onChange={(e) => setEditingInstance({ ...editingInstance, status: e.target.value as any })}
-                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg px-3 py-2 text-xs font-bold focus:outline-none"
+                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg px-3 py-2 text-xs font-bold focus:outline-none"
                   >
                     <option value="A realizar">A realizar</option>
                     <option value="Em andamento">Em andamento</option>
@@ -725,7 +725,7 @@ export default function ClinicalAttendanceManager({
                     disabled={editingInstance.status !== 'Realizado'}
                     value={editingInstance.date || ''}
                     onChange={(e) => setEditingInstance({ ...editingInstance, date: e.target.value })}
-                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] disabled:bg-zinc-100 disabled:text-zinc-400 rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
+                    className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] disabled:bg-zinc-100 disabled:text-zinc-400 rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
                   />
                 </div>
 
@@ -742,7 +742,7 @@ export default function ClinicalAttendanceManager({
                           setEditingInstance({ ...editingInstance, dentist: e.target.value });
                         }
                       }}
-                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
+                      className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
                     >
                       <option value="">Selecione um dentista...</option>
                       {PRESET_DENTISTS.map((d) => (
@@ -757,7 +757,7 @@ export default function ClinicalAttendanceManager({
                         placeholder="Nome do Dentista"
                         value={customDentist}
                         onChange={(e) => setCustomDentist(e.target.value)}
-                        className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
+                        className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none"
                       />
                       <button
                         type="button"
@@ -810,7 +810,7 @@ export default function ClinicalAttendanceManager({
                   value={editingInstance.observation || ''}
                   onChange={(e) => setEditingInstance({ ...editingInstance, observation: e.target.value })}
                   placeholder="Observação ou evolução clínica..."
-                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#8B0000] rounded-lg px-3 py-2 text-xs font-medium placeholder-zinc-400 focus:outline-none resize-none"
+                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] focus:border-[#4E1119] rounded-lg px-3 py-2 text-xs font-medium placeholder-zinc-400 focus:outline-none resize-none"
                 />
               </div>
 

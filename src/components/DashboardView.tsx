@@ -230,7 +230,7 @@ export default function DashboardView({
     <div className="space-y-8 font-sans print:hidden">
       
       {/* ================= HERO GREETING BLOCK ================= */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#8B0000] to-[#5C0000] border border-[#C09553]/40 rounded-3xl p-6 sm:p-8 text-[#FAF8F5] shadow-xl">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#4E1119] to-[#2B060B] border border-[#C09553]/40 rounded-3xl p-6 sm:p-8 text-[#FAF8F5] shadow-xl">
         {/* Abstract background graphics with branding patterns */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-[#C09553]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-gradient-to-tr from-[#C09553]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
@@ -293,7 +293,7 @@ export default function DashboardView({
         >
           <div className="space-y-1">
             <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Taxa de Conversão</span>
-            <span className="text-2xl font-serif font-bold text-[#8B0000] block">{stats.conversionRate}%</span>
+            <span className="text-2xl font-serif font-bold text-[#4E1119] block">{stats.conversionRate}%</span>
             <span className="text-[10.5px] text-emerald-600 font-semibold flex items-center gap-0.5">
               <TrendingUp className="w-3 h-3" />
               Meta Recomendada: 75%
@@ -364,7 +364,7 @@ export default function DashboardView({
             <span className="text-2xl font-serif font-bold text-blue-700 block">
               {returns.length} Pacientes
             </span>
-            <span className="text-[10.5px] text-[#8B0000] font-semibold">Prevenção / Recalls agendados</span>
+            <span className="text-[10.5px] text-[#4E1119] font-semibold">Prevenção / Recalls agendados</span>
           </div>
           <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center flex-shrink-0 shadow-inner">
             <Activity className="w-6 h-6" />
@@ -377,14 +377,14 @@ export default function DashboardView({
       <div className="bg-[#FAF8F5] border border-[#E6DEC9] rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xs">
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-[#C09553]" />
-          <span className="text-xs font-bold text-[#8B0000] uppercase tracking-wide">
+          <span className="text-xs font-bold text-[#4E1119] uppercase tracking-wide">
             Seu Fluxo de Trabalho Integrado:
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-1.5 md:gap-3 text-[10px] sm:text-[11px] font-bold text-zinc-400 overflow-x-auto w-full md:w-auto justify-start md:justify-end py-1">
-          <span className="text-[#8B0000] bg-[#8B0000]/5 px-2 py-0.5 rounded border border-[#8B0000]/10">Cadastro</span>
+          <span className="text-[#4E1119] bg-[#4E1119]/5 px-2 py-0.5 rounded border border-[#4E1119]/10">Cadastro</span>
           <ChevronRight className="w-3.5 h-3.5 text-[#C09553]" />
-          <span className="text-[#8B0000] bg-[#8B0000]/5 px-2 py-0.5 rounded border border-[#8B0000]/10">Consulta</span>
+          <span className="text-[#4E1119] bg-[#4E1119]/5 px-2 py-0.5 rounded border border-[#4E1119]/10">Consulta</span>
           <ChevronRight className="w-3.5 h-3.5 text-[#C09553]" />
           <span className="text-zinc-600">Mapeamento</span>
           <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
@@ -406,7 +406,7 @@ export default function DashboardView({
           <div className="flex justify-between items-center border-b border-zinc-100 pb-3">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-[#B48C4D]" />
-              <h3 className="font-serif font-bold text-[#8B0000] text-base leading-none">
+              <h3 className="font-serif font-bold text-[#4E1119] text-base leading-none">
                 Agenda {isToday(selectedAgendaDate) ? 'do Dia' : format(selectedAgendaDate, "dd 'de' MMM", { locale: ptBR })}
               </h3>
             </div>
@@ -415,13 +415,13 @@ export default function DashboardView({
                 onClick={() => setSelectedAgendaDate(subDays(selectedAgendaDate, 1))}
                 className="p-1 hover:bg-[#FAF8F5] rounded-lg transition-colors border border-transparent hover:border-[#E6DEC9]"
               >
-                <ChevronLeft className="w-4 h-4 text-zinc-500 hover:text-[#8B0000]" />
+                <ChevronLeft className="w-4 h-4 text-zinc-500 hover:text-[#4E1119]" />
               </button>
               <button 
                 onClick={() => setSelectedAgendaDate(addDays(selectedAgendaDate, 1))}
                 className="p-1 hover:bg-[#FAF8F5] rounded-lg transition-colors border border-transparent hover:border-[#E6DEC9]"
               >
-                <ChevronRight className="w-4 h-4 text-zinc-500 hover:text-[#8B0000]" />
+                <ChevronRight className="w-4 h-4 text-zinc-500 hover:text-[#4E1119]" />
               </button>
               <span className="text-[10px] font-bold text-rose-800 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-100 uppercase ml-2">
                 {appointments.length} Consultas
@@ -467,7 +467,7 @@ export default function DashboardView({
                     return (
                       <tr key={appt.id} className="hover:bg-[#FAF8F5]/40 transition-all group">
                         {/* Time */}
-                        <td className="py-3.5 font-bold font-mono text-[#8B0000] text-sm">
+                        <td className="py-3.5 font-bold font-mono text-[#4E1119] text-sm">
                           {appt.time}
                         </td>
                         
@@ -511,7 +511,7 @@ export default function DashboardView({
                             </button>
                             <button
                               onClick={() => onNavigateToPlanning(appt.patientName)}
-                              className="px-2.5 py-1 bg-[#8B0000] text-white hover:bg-[#6c1b26] transition-colors font-bold text-[10px] rounded"
+                              className="px-2.5 py-1 bg-[#4E1119] text-white hover:bg-[#6c1b26] transition-colors font-bold text-[10px] rounded"
                               title="Abrir Planejamento de Tratamento"
                             >
                               Atender
@@ -530,7 +530,7 @@ export default function DashboardView({
         {/* NEW REGISTRATION QUICK SHORTCUT MODULE */}
         <div className="lg:col-span-5 bg-[#FAF8F5] border-2 border-dashed border-[#E6DEC9] rounded-2xl p-5 flex flex-col justify-between space-y-4">
           <div className="space-y-2">
-            <h4 className="font-serif font-bold text-[#8B0000] text-base leading-none">
+            <h4 className="font-serif font-bold text-[#4E1119] text-base leading-none">
               Cadastro Rápido & Consulta Inicial
             </h4>
             <p className="text-xs text-zinc-500 leading-relaxed">
@@ -540,7 +540,7 @@ export default function DashboardView({
 
           <div className="space-y-3.5 pt-2">
             <div className="bg-white border border-zinc-200 rounded-xl p-3 flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#8B0000]/5 text-[#8B0000] flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-[#4E1119]/5 text-[#4E1119] flex items-center justify-center flex-shrink-0">
                 <UserPlus className="w-4 h-4" />
               </div>
               <div className="flex-1 text-xs">
@@ -562,7 +562,7 @@ export default function DashboardView({
 
           <button
             onClick={onOpenRegistry}
-            className="w-full mt-2 bg-[#8B0000] hover:bg-[#6c1b26] text-white text-xs font-bold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+            className="w-full mt-2 bg-[#4E1119] hover:bg-[#6c1b26] text-white text-xs font-bold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
           >
             <UserPlus className="w-4 h-4 text-[#C09553]" />
             <span>Preencher Cadastro Inicial</span>
@@ -579,7 +579,7 @@ export default function DashboardView({
           <div className="flex justify-between items-center border-b border-zinc-100 pb-3">
             <div className="flex items-center gap-2">
               <Activity className="w-5 h-5 text-[#B48C4D]" />
-              <h3 className="font-serif font-bold text-[#8B0000] text-base leading-none">
+              <h3 className="font-serif font-bold text-[#4E1119] text-base leading-none">
                 Retorno & Recalls Periódicos
               </h3>
             </div>
@@ -622,7 +622,7 @@ export default function DashboardView({
                         ret.status === 'Confirmado' 
                           ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
                           : ret.status === 'Falta Registrada' 
-                          ? 'bg-red-50 text-[#8B0000] border-red-200'
+                          ? 'bg-red-50 text-[#4E1119] border-red-200'
                           : 'bg-amber-50 text-amber-800 border-amber-200'
                       }`}>
                         {ret.status}
@@ -648,7 +648,7 @@ export default function DashboardView({
           <div className="flex justify-between items-center border-b border-zinc-100 pb-3">
             <div className="flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-[#B48C4D]" />
-              <h3 className="font-serif font-bold text-[#8B0000] text-base leading-none">
+              <h3 className="font-serif font-bold text-[#4E1119] text-base leading-none">
                 Negociações de Orçamento Ativas
               </h3>
             </div>
@@ -703,13 +703,13 @@ export default function DashboardView({
                     <div className="flex items-center gap-3 flex-shrink-0 justify-between sm:justify-end">
                       <div className="text-right">
                         <p className="text-[10px] text-zinc-400 font-bold uppercase">VALOR LÍQUIDO</p>
-                        <p className="font-bold text-[#8B0000] text-sm font-mono leading-none">
+                        <p className="font-bold text-[#4E1119] text-sm font-mono leading-none">
                           {patient.extractedTotal ? patient.extractedTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : 'R$ 0,00'}
                         </p>
                       </div>
                       <button
                         onClick={() => onNavigateToPlanning(patient.name, status)}
-                        className="p-2 border border-zinc-200 hover:border-[#8B0000] rounded-xl hover:bg-[#FAF8F5] transition-all flex items-center gap-1 text-[10.5px] text-[#8B0000] font-bold"
+                        className="p-2 border border-zinc-200 hover:border-[#4E1119] rounded-xl hover:bg-[#FAF8F5] transition-all flex items-center gap-1 text-[10.5px] text-[#4E1119] font-bold"
                       >
                         Abrir Orçamento
                         <ChevronRight className="w-4 h-4" />

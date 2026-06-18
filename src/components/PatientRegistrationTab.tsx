@@ -29,7 +29,7 @@ export default function PatientRegistrationTab({ proposal, setProposal }: Patien
       
       {/* 1. Dados Cadastrais */}
       <div className="border-b border-zinc-200">
-        <div className="bg-[#8B0000] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
+        <div className="bg-[#4E1119] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
           <User className="w-4 h-4 text-[#C09553]" />
           <h3 className="font-serif font-bold text-sm tracking-wide uppercase">Dados cadastrais</h3>
         </div>
@@ -131,7 +131,7 @@ export default function PatientRegistrationTab({ proposal, setProposal }: Patien
 
       {/* 2. Dados do Responsável */}
       <div className="border-b border-zinc-200">
-        <div className="bg-[#8B0000] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
+        <div className="bg-[#4E1119] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
           <HeartPulse className="w-4 h-4 text-[#C09553]" />
           <h3 className="font-serif font-bold text-sm tracking-wide uppercase">Dados do responsável</h3>
         </div>
@@ -190,7 +190,7 @@ export default function PatientRegistrationTab({ proposal, setProposal }: Patien
 
       {/* 3. Endereço */}
       <div className="border-b border-zinc-200">
-        <div className="bg-[#8B0000] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
+        <div className="bg-[#4E1119] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
           <MapPin className="w-4 h-4 text-[#C09553]" />
           <h3 className="font-serif font-bold text-sm tracking-wide uppercase">Endereço</h3>
         </div>
@@ -238,7 +238,7 @@ export default function PatientRegistrationTab({ proposal, setProposal }: Patien
 
       {/* 4. Convênio */}
       <div className="border-b border-zinc-200">
-        <div className="bg-[#8B0000] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
+        <div className="bg-[#4E1119] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
           <Building2 className="w-4 h-4 text-[#C09553]" />
           <h3 className="font-serif font-bold text-sm tracking-wide uppercase">Convênio</h3>
         </div>

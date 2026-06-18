@@ -1403,7 +1403,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
     <div className="space-y-8 font-sans">
       <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden print:hidden">
         <div>
-          <div className="bg-[#8B0000] text-white px-4 py-2 flex items-center gap-2">
+          <div className="bg-[#4E1119] text-white px-4 py-2 flex items-center gap-2">
             <FileText className="w-4 h-4" />
             <h3 className="font-bold text-sm tracking-wide">Emissão de Documentos</h3>
           </div>
@@ -1443,7 +1443,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
             
             {declarationsHistory.length > 0 && (
                <div className="mt-8 pt-6 border-t border-zinc-200">
-                <h4 className="font-bold text-[#8B0000] text-sm mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#4E1119] text-sm mb-3 flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   Histórico de Declarações Recentes
                 </h4>
@@ -1468,7 +1468,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                            <td className="px-4 py-3 flex justify-end">
                              <button
                                onClick={() => handleReprint(decl)}
-                               className="flex items-center gap-1.5 text-xs font-bold text-[#8B0000] hover:text-[#C09553] transition-colors bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg"
+                               className="flex items-center gap-1.5 text-xs font-bold text-[#4E1119] hover:text-[#C09553] transition-colors bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg"
                              >
                                <Printer className="w-3.5 h-3.5" />
                                Reimprimir
@@ -1500,7 +1500,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
       {/* Configurações do Consultório */}
       <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden text-xs print:hidden">
-        <div className="bg-[#8B0000] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
+        <div className="bg-[#4E1119] text-white px-4 py-2.5 flex items-center gap-2 border-b border-[#C09553]/30">
           <Settings className="w-4 h-4 text-[#C09553]" />
           <h3 className="font-serif font-bold text-sm tracking-wide uppercase">Configurações do Consultório</h3>
         </div>
@@ -1534,7 +1534,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
       {/* FERRAMENTA DE IMPORTAÇÃO BACKUP MULTIFORMATO */}
       <div id="backup-importer-container" className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden text-xs print:hidden">
-        <div className="bg-[#8B0000] text-white px-4 py-2.5 flex items-center justify-between border-b border-[#C09553]/30">
+        <div className="bg-[#4E1119] text-white px-4 py-2.5 flex items-center justify-between border-b border-[#C09553]/30">
           <div className="flex items-center gap-2">
             <Database className="w-4 h-4 text-[#C09553]" />
             <h3 className="font-serif font-bold text-sm tracking-wide uppercase">Importação de Backup Externo (Múltiplos Formatos)</h3>
@@ -1609,7 +1609,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                           : (fileCategories[importFile.name] || 'Prontuário') === 'Orçamentos'
                           ? 'bg-emerald-50 text-emerald-800 border border-[#D5CBB3]'
                           : (fileCategories[importFile.name] || 'Prontuário') === 'Prontuário'
-                          ? 'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                          ? 'bg-[#4E1119]/10 text-[#4E1119] border border-[#4E1119]/20'
                           : 'bg-zinc-100 text-zinc-700 border border-zinc-200'
                       }`}>
                         🏷️ {fileCategories[importFile.name] || 'Prontuário'}
@@ -1629,7 +1629,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                 >
                   <div className="flex items-start justify-between">
                     <span className="font-bold text-zinc-800 truncate pr-2 max-w-[80%]">BlueDental_Faturamento.xlsx</span>
-                    <span className="bg-[#8B0000]/10 text-[#C09553] text-[8px] font-mono font-bold px-1.5 py-0.5 rounded uppercase">Excel</span>
+                    <span className="bg-[#4E1119]/10 text-[#C09553] text-[8px] font-mono font-bold px-1.5 py-0.5 rounded uppercase">Excel</span>
                   </div>
                   <div className="flex items-center justify-between text-[10px] mt-1 select-none">
                     <span className="text-zinc-400 font-medium">
@@ -1641,7 +1641,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                         : (fileCategories['Backup_BlueDental_Faturamento.xlsx'] || 'Prontuário') === 'Orçamentos'
                         ? 'bg-emerald-50 text-emerald-800 border border-[#D5CBB3]'
                         : (fileCategories['Backup_BlueDental_Faturamento.xlsx'] || 'Prontuário') === 'Prontuário'
-                        ? 'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                        ? 'bg-[#4E1119]/10 text-[#4E1119] border border-[#4E1119]/20'
                         : 'bg-zinc-100 text-zinc-700 border border-zinc-200'
                     }`}>
                       🏷️ {fileCategories['Backup_BlueDental_Faturamento.xlsx'] || 'Orçamentos'}
@@ -1672,7 +1672,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                         : (fileCategories['Agenda_Consultas_Retorno_Junho.csv'] || 'Prontuário') === 'Orçamentos'
                         ? 'bg-emerald-50 text-emerald-800 border border-[#D5CBB3]'
                         : (fileCategories['Agenda_Consultas_Retorno_Junho.csv'] || 'Prontuário') === 'Prontuário'
-                        ? 'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                        ? 'bg-[#4E1119]/10 text-[#4E1119] border border-[#4E1119]/20'
                         : 'bg-zinc-100 text-zinc-700 border border-zinc-200'
                     }`}>
                       🏷️ {fileCategories['Agenda_Consultas_Retorno_Junho.csv'] || 'Prontuário'}
@@ -1703,7 +1703,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                         : (fileCategories['Anamneses_Clinicas_Gerais.md'] || 'Prontuário') === 'Orçamentos'
                         ? 'bg-emerald-50 text-emerald-800 border border-[#D5CBB3]'
                         : (fileCategories['Anamneses_Clinicas_Gerais.md'] || 'Prontuário') === 'Prontuário'
-                        ? 'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                        ? 'bg-[#4E1119]/10 text-[#4E1119] border border-[#4E1119]/20'
                         : 'bg-zinc-100 text-zinc-700 border border-zinc-200'
                     }`}>
                       🏷️ {fileCategories['Anamneses_Clinicas_Gerais.md'] || 'Exames'}
@@ -1719,7 +1719,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                 {/* Seletor Dinâmico de Categoria do Arquivo Clinico para Ações Rápidas */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-3 border border-zinc-200 rounded-xl gap-3">
                   <div className="flex items-center gap-3">
-                    <span className="p-2 bg-[#8B0000]/5 text-[#C09553] rounded-lg shrink-0">
+                    <span className="p-2 bg-[#4E1119]/5 text-[#C09553] rounded-lg shrink-0">
                       <FolderOpen className="w-5 h-5" />
                     </span>
                     <div>
@@ -1770,7 +1770,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                     onClick={() => setSelectedQuickActionTab('calendar')}
                     className={`px-4 py-2 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                       selectedQuickActionTab === 'calendar'
-                        ? 'bg-[#8B0000] text-white shadow-xs'
+                        ? 'bg-[#4E1119] text-white shadow-xs'
                         : 'bg-white text-zinc-600 border border-zinc-200 hover:bg-zinc-50'
                     }`}
                   >
@@ -1940,7 +1940,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
                             return (
                               <tr key={idx} className="hover:bg-zinc-50 text-xs">
-                                <td className="px-4 py-2 text-[#8B0000] font-bold">{name}</td>
+                                <td className="px-4 py-2 text-[#4E1119] font-bold">{name}</td>
                                 <td className="px-4 py-2 font-mono">{pDate}</td>
                                 <td className="px-4 py-2 font-mono">{pTime}</td>
                                 <td className="px-4 py-2 flex justify-end">
@@ -1952,7 +1952,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                         ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                                         : status === 'syncing'
                                         ? 'bg-zinc-100 text-zinc-500 font-medium col-span-2'
-                                        : 'bg-[#8B0000] text-white hover:bg-[#340A0F]'
+                                        : 'bg-[#4E1119] text-white hover:bg-[#340A0F]'
                                     }`}
                                   >
                                     {status === 'synced' && <Check className="w-3 h-3 text-emerald-700" />}
@@ -2051,7 +2051,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                           act.type === 'WhatsApp' 
                             ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' 
                             : act.type === 'Google Calendar' 
-                            ? 'bg-red-50 text-[#8B0000] border border-red-200' 
+                            ? 'bg-red-50 text-[#4E1119] border border-red-200' 
                             : 'bg-zinc-100 text-zinc-800 border border-zinc-300'
                         }`}>
                           {act.type}
@@ -2069,11 +2069,11 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
           {/* Area para Upload foi migrada para o CRM */}
           <div className="border border-[#D5CBB3] bg-[#FAF8F5] rounded-xl p-8 text-center flex flex-col items-center justify-center gap-4">
-            <div className="w-14 h-14 bg-[#8B0000]/10 text-[#8B0000] rounded-full flex items-center justify-center">
+            <div className="w-14 h-14 bg-[#4E1119]/10 text-[#4E1119] rounded-full flex items-center justify-center">
               <Database className="w-7 h-7 text-[#C09553]" />
             </div>
             <div>
-              <h3 className="text-[#8B0000] font-bold text-lg font-serif">A Central de Importação Mudou!</h3>
+              <h3 className="text-[#4E1119] font-bold text-lg font-serif">A Central de Importação Mudou!</h3>
               <p className="text-zinc-500 mt-2 max-w-lg mx-auto text-sm leading-relaxed">
                 Para melhorar o vínculo de pacientes, unificamos a ferramenta de importação avançada. Agora você pode importar seus backups (Excel, CSV, PDF, Textos) com segurança diretamente na aba <b>"CRM Odontológico & Central Inteligente"</b>.
               </p>
@@ -2085,8 +2085,8 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
           {(importStatus === 'loaded' || importStatus === 'running' || importStatus === 'success' || importStatus === 'done') && importFile && (
             <div className="space-y-6">
               {detectedTemplate === 'bluedental' && (
-                <div className="bg-[#8B0000]/5 border-2 border-[#C09553] p-4 rounded-xl flex items-start gap-3">
-                  <div className="bg-[#8B0000] text-[#C09553] px-3 py-1 rounded font-bold text-[10px] uppercase font-mono tracking-wider shrink-0 mt-0.5">
+                <div className="bg-[#4E1119]/5 border-2 border-[#C09553] p-4 rounded-xl flex items-start gap-3">
+                  <div className="bg-[#4E1119] text-[#C09553] px-3 py-1 rounded font-bold text-[10px] uppercase font-mono tracking-wider shrink-0 mt-0.5">
                     BlueDental
                   </div>
                   <div>
@@ -2143,7 +2143,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
               {/* Seletor de Categoria do Arquivo Clinico Importado */}
               <div className="bg-[#FAF8F5] border border-[#D5CBB3] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-start gap-2.5">
-                  <div className="p-2 bg-[#8B0000]/5 text-[#C09553] rounded-lg mt-0.5">
+                  <div className="p-2 bg-[#4E1119]/5 text-[#C09553] rounded-lg mt-0.5">
                     <FolderOpen className="w-4 h-4" />
                   </div>
                   <div>
@@ -2205,7 +2205,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
                     {/* Campo Contato */}
                     <div>
-                      <label className="block text-[#8B0000] font-bold mb-1">WhatsApp / Celular</label>
+                      <label className="block text-[#4E1119] font-bold mb-1">WhatsApp / Celular</label>
                       <select 
                         value={mappings.phone} 
                         onChange={(e) => handleMappingChange('phone', parseInt(e.target.value))}
@@ -2292,7 +2292,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                         type="checkbox" 
                         checked={skipDuplicates} 
                         onChange={(e) => setSkipDuplicates(e.target.checked)} 
-                        className="rounded border-zinc-300 text-[#8B0000] focus:ring-[#C09553]"
+                        className="rounded border-zinc-300 text-[#4E1119] focus:ring-[#C09553]"
                       />
                       <span>Prevenir registros duplicados (vincular ao prontuário se já existir no Google Drive)</span>
                     </label>
@@ -2302,7 +2302,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                         checked={createCalendarAppts} 
                         onChange={(e) => setCreateCalendarAppts(e.target.checked)} 
                         disabled={mappings.date === -1}
-                        className="rounded border-zinc-300 text-[#8B0000] focus:ring-[#C09553] disabled:opacity-50"
+                        className="rounded border-zinc-300 text-[#4E1119] focus:ring-[#C09553] disabled:opacity-50"
                       />
                       <span className={mappings.date === -1 ? 'text-zinc-400' : ''}>Marcar consultas no Google Agenda</span>
                     </label>
@@ -2326,8 +2326,8 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                       onClick={() => setActiveViewMode('workspace')}
                       className={`px-3 py-1.5 rounded-md text-[11px] font-bold transition-all cursor-pointer ${
                         activeViewMode === 'workspace'
-                          ? 'bg-[#8B0000] text-[#FAF8F5] shadow-xs'
-                          : 'text-zinc-600 hover:text-[#8B0000] hover:bg-zinc-100'
+                          ? 'bg-[#4E1119] text-[#FAF8F5] shadow-xs'
+                          : 'text-zinc-600 hover:text-[#4E1119] hover:bg-zinc-100'
                       }`}
                     >
                       👁️ Workspace UX
@@ -2337,8 +2337,8 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                       onClick={() => setActiveViewMode('legacy')}
                       className={`px-3 py-1.5 rounded-md text-[11px] font-bold transition-all cursor-pointer ${
                         activeViewMode === 'legacy'
-                          ? 'bg-[#8B0000] text-[#FAF8F5] shadow-xs'
-                          : 'text-zinc-600 hover:text-[#8B0000] hover:bg-zinc-100'
+                          ? 'bg-[#4E1119] text-[#FAF8F5] shadow-xs'
+                          : 'text-zinc-600 hover:text-[#4E1119] hover:bg-zinc-100'
                       }`}
                     >
                       📋 Importador Antigo
@@ -2545,7 +2545,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                   alert("Lote arquivado com sucesso!");
                                 }, 1500);
                               }}
-                              className="w-full sm:w-auto px-4 py-2 border border-[#D5CBB3] rounded-lg bg-white hover:bg-zinc-50 font-bold text-[#8B0000] flex items-center justify-center gap-1.5 self-stretch sm:self-auto cursor-pointer"
+                              className="w-full sm:w-auto px-4 py-2 border border-[#D5CBB3] rounded-lg bg-white hover:bg-zinc-50 font-bold text-[#4E1119] flex items-center justify-center gap-1.5 self-stretch sm:self-auto cursor-pointer"
                             >
                               <Printer className="w-4 h-4 text-[#C09553]" />
                               Emitir Lote no Drive
@@ -2677,13 +2677,13 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                     return (
                       <div className="space-y-6">
                         {/* Upper Bar With Patient Selector */}
-                        <div className="bg-[#8B0000]/5 border border-[#C09553]/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div className="bg-[#4E1119]/5 border border-[#C09553]/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                           <div className="space-y-1">
                             <label className="block text-zinc-600 font-bold text-[10px] uppercase font-mono tracking-wider">Selecione o Prontuário do Paciente</label>
                             <select 
                               value={activePatient}
                               onChange={(e) => setSelectedPatientFilter(e.target.value)}
-                              className="border border-[#D5CBB3] bg-white rounded-lg p-2 font-serif text-sm font-bold focus:outline-none focus:border-[#C09553] text-[#8B0000]"
+                              className="border border-[#D5CBB3] bg-white rounded-lg p-2 font-serif text-sm font-bold focus:outline-none focus:border-[#C09553] text-[#4E1119]"
                             >
                               {patientsList.map(name => (
                                 <option key={name} value={name}>{name}</option>
@@ -2710,7 +2710,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                   alert("Sincronização concluída com sucesso!");
                                 }, 1500);
                               }}
-                              className="flex-1 sm:flex-none px-4 py-2 border border-[#D5CBB3] rounded-lg bg-white hover:bg-zinc-50 font-bold text-[#8B0000] text-xs flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
+                              className="flex-1 sm:flex-none px-4 py-2 border border-[#D5CBB3] rounded-lg bg-white hover:bg-zinc-50 font-bold text-[#4E1119] text-xs flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
                             >
                               <Printer className="w-3.5 h-3.5 text-[#C09553]" />
                               Gravar Prontuário Drive
@@ -2720,7 +2720,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
                         {/* Interactive Oral Charting Canvas Map */}
                         <div className="bg-white border border-zinc-200 rounded-2xl p-6 text-center space-y-4 shadow-sm">
-                          <h4 className="font-serif font-bold text-[#8B0000] text-xs uppercase tracking-wide flex items-center justify-center gap-1.5">
+                          <h4 className="font-serif font-bold text-[#4E1119] text-xs uppercase tracking-wide flex items-center justify-center gap-1.5">
                             <Layers className="w-4 h-4 text-[#C09553]" />
                             Mapeamento Visual de Tratamentos (Odontograma Clínico)
                           </h4>
@@ -2823,7 +2823,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                               <tbody className="divide-y divide-zinc-100">
                                 {patientProcs.map((item, idx) => (
                                   <tr key={idx} className="hover:bg-zinc-50/50">
-                                    <td className="px-4 py-2.5 font-bold text-[#8B0000] text-xs">Dente {item.tooth || 'Geral'}</td>
+                                    <td className="px-4 py-2.5 font-bold text-[#4E1119] text-xs">Dente {item.tooth || 'Geral'}</td>
                                     <td className="px-4 py-2.5 font-mono text-[10px] text-zinc-400 uppercase">{item.arcada}</td>
                                     <td className="px-4 py-2.5 text-zinc-900 font-bold">{item.name}</td>
                                     <td className="px-4 py-2.5">
@@ -2899,7 +2899,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                           <div className="bg-[#FAF8F5] border border-[#D5CBB3] rounded-xl p-4 flex flex-col justify-between text-xs">
                             <span className="text-zinc-500 font-bold uppercase font-mono">Total Agendamentos</span>
-                            <h3 className="text-base font-bold text-[#8B0000] mt-1">{totalCount} no backup</h3>
+                            <h3 className="text-base font-bold text-[#4E1119] mt-1">{totalCount} no backup</h3>
                           </div>
                           <div className="bg-emerald-50 border border-emerald-200/50 rounded-xl p-4 flex flex-col justify-between text-xs">
                             <span className="text-emerald-700 font-bold uppercase font-mono">Atendidos / Concluídos</span>
@@ -2947,7 +2947,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                 setIsRunningImport(false);
                                 alert("Sincronização realizada! " + cnt + " consultas criadas no Google Agenda!");
                               }}
-                              className="w-full sm:w-auto px-4 py-2 bg-[#8B0000] hover:bg-[#340A0F] rounded-lg text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer self-stretch sm:self-auto transition-colors"
+                              className="w-full sm:w-auto px-4 py-2 bg-[#4E1119] hover:bg-[#340A0F] rounded-lg text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer self-stretch sm:self-auto transition-colors"
                             >
                               <Calendar className="w-4 h-4 text-[#C09553]" />
                               Sincronizar c/ Google Agenda
@@ -3086,13 +3086,13 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                     return (
                       <div className="space-y-6">
                         {/* Top bar control */}
-                        <div className="bg-[#8B0000]/5 border border-[#C09553]/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div className="bg-[#4E1119]/5 border border-[#C09553]/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                           <div className="space-y-1">
                             <label className="block text-zinc-600 font-bold text-[10px] uppercase font-mono tracking-wider">Prontuário de Ficha de Anamnese</label>
                             <select 
                               value={activePatient}
                               onChange={(e) => setSelectedPatientFilter(e.target.value)}
-                              className="border border-[#D5CBB3] bg-white rounded-lg p-2 font-serif text-sm font-bold focus:outline-none focus:border-[#C09553] text-[#8B0000]"
+                              className="border border-[#D5CBB3] bg-white rounded-lg p-2 font-serif text-sm font-bold focus:outline-none focus:border-[#C09553] text-[#4E1119]"
                             >
                               {patientsNamesList.map(name => (
                                 <option key={name} value={name}>{name}</option>
@@ -3216,7 +3216,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                 onClick={() => setSelectedPatientFilter(doc.id)}
                                 className={`w-full text-left p-2.5 rounded-xl border text-[11px] font-medium flex justify-between items-center transition-all ${
                                   selectedDocId === doc.id 
-                                    ? 'bg-[#8B0000] border-emerald-950 text-white shadow-sm font-bold' 
+                                    ? 'bg-[#4E1119] border-emerald-950 text-white shadow-sm font-bold' 
                                     : 'bg-zinc-50 border-zinc-200 text-zinc-700 hover:bg-zinc-100/50'
                                 }`}
                               >
@@ -3312,13 +3312,13 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                     return (
                       <div className="space-y-6">
                         {/* Selector top filter */}
-                        <div className="bg-[#8B0000]/5 border border-[#C09553]/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div className="bg-[#4E1119]/5 border border-[#C09553]/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                           <div className="space-y-1">
                             <label className="block text-zinc-600 font-bold text-[10px] uppercase font-mono tracking-wider">Filtrar Galeria de Fotos Clínicas</label>
                             <select 
                               value={selectedPatient}
                               onChange={(e) => setSelectedPatientFilter(e.target.value)}
-                              className="border border-[#D5CBB3] bg-white rounded-lg p-2 font-serif text-sm font-bold focus:outline-none focus:border-[#C09553] text-[#8B0000]"
+                              className="border border-[#D5CBB3] bg-white rounded-lg p-2 font-serif text-sm font-bold focus:outline-none focus:border-[#C09553] text-[#4E1119]"
                             >
                               <option value="Todos">Visualizar Todos os Registros ({galleryRecords.length} fotos)</option>
                               {uniquePatientsList.map(name => (
@@ -3359,7 +3359,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                     e.currentTarget.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=350&q=80";
                                   }}
                                 />
-                                <span className="absolute top-2 left-2 bg-[#8B0000]/80 backdrop-blur-xs text-[#C09553] text-[8.5px] px-2 py-0.5 rounded font-bold uppercase font-mono tracking-widest">{photo.galeria}</span>
+                                <span className="absolute top-2 left-2 bg-[#4E1119]/80 backdrop-blur-xs text-[#C09553] text-[8.5px] px-2 py-0.5 rounded font-bold uppercase font-mono tracking-widest">{photo.galeria}</span>
                               </div>
                               <div className="p-3.5 space-y-1.5">
                                 <h5 className="text-[11.5px] font-bold text-zinc-900 leading-tight">{photo.patient}</h5>
@@ -3452,7 +3452,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                                 Processando migração ativa...
                               </>
                             ) : (
-                              <span className="text-[#8B0000] font-serif font-bold uppercase">Migração Concluída!</span>
+                              <span className="text-[#4E1119] font-serif font-bold uppercase">Migração Concluída!</span>
                             )}
                           </span>
                           <span className="font-mono bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded font-bold">
@@ -3462,7 +3462,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
 
                         <div className="w-full bg-zinc-200 h-2.5 rounded-full overflow-hidden">
                           <div 
-                            className="bg-gradient-to-r from-[#8B0000] to-[#C09553] h-full transition-all duration-300"
+                            className="bg-gradient-to-r from-[#4E1119] to-[#C09553] h-full transition-all duration-300"
                             style={{ width: `${importProgress.total > 0 ? (importProgress.current / importProgress.total) * 100 : 0}%` }}
                           />
                         </div>
@@ -3504,7 +3504,7 @@ export default function PatientDocumentsTab({ proposal, clinicSettings, setClini
                       <button
                         onClick={runDataImport}
                         disabled={mappings.name === -1}
-                        className="flex items-center gap-2 px-6 py-3 bg-[#8B0000] text-[#FAF8F5] font-bold rounded-xl text-xs uppercase tracking-wider hover:bg-[#340A0F] active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
+                        className="flex items-center gap-2 px-6 py-3 bg-[#4E1119] text-[#FAF8F5] font-bold rounded-xl text-xs uppercase tracking-wider hover:bg-[#340A0F] active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
                       >
                         Iniciar Importação Rápida ({rawData.length - 1} Pacientes)
                       </button>
