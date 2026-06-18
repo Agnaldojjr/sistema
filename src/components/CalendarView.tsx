@@ -109,7 +109,7 @@ export default function CalendarView({ onNewPatient, initialPatientName, onClear
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <button
           onClick={() => setIframeKey(Date.now())}
-          className="flex items-center gap-1.5 px-3 py-2 bg-white text-zinc-600 hover:text-[#4E1119] border border-zinc-200 hover:bg-[#FAF8F5] text-sm font-medium rounded-lg transition-all duration-200 shadow-sm"
+          className="flex items-center gap-1.5 px-3 py-2 bg-white text-zinc-600 hover:text-[#8B0000] border border-zinc-200 hover:bg-[#FAF8F5] text-sm font-medium rounded-lg transition-all duration-200 shadow-sm"
           title="Atualizar agenda manualmente"
         >
           <RefreshCcw className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function CalendarView({ onNewPatient, initialPatientName, onClear
             setSelectedEvent(null);
             setIsModalOpen(true);
           }}
-          className="flex items-center gap-1.5 px-4 py-2 bg-[#4E1119] text-[#FAF8F5] hover:bg-[#6c1b26] border border-[#4E1119] text-sm font-medium rounded-lg transition-all duration-200 shadow-sm"
+          className="flex items-center gap-1.5 px-4 py-2 bg-[#8B0000] text-[#FAF8F5] hover:bg-[#6c1b26] border border-[#8B0000] text-sm font-medium rounded-lg transition-all duration-200 shadow-sm"
           title="Agendar nova consulta na agenda"
         >
           <Plus className="w-4 h-4" />

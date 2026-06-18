@@ -674,7 +674,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
     <div className="space-y-8">
       
       {/* ================= HEADER AND PRINT BUTTON ================= */}
-      <div className="bg-gradient-to-r from-[#4E1119] to-[#2D060B] border border-[#C09553]/40 rounded-xl p-5 sm:p-6 shadow-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 print:hidden">
+      <div className="bg-gradient-to-r from-[#8B0000] to-[#2D060B] border border-[#C09553]/40 rounded-xl p-5 sm:p-6 shadow-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 print:hidden">
         <div className="space-y-1">
           <span className="text-[10px] font-extrabold text-[#C09553] tracking-widest uppercase block">
             Aba 3. Negociação Facilitada
@@ -693,7 +693,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
             onClick={() => {
               window.open(window.location.href.split('?')[0] + '?mode=patient', '_blank', 'width=1100,height=800');
             }}
-            className="flex items-center justify-center gap-2 bg-[#FAF8F5] text-[#4E1119] border-2 border-[#C09553]/30 hover:border-[#C09553] font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-sm hover:shadow-md cursor-pointer select-none active:scale-95"
+            className="flex items-center justify-center gap-2 bg-[#FAF8F5] text-[#8B0000] border-2 border-[#C09553]/30 hover:border-[#C09553] font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-sm hover:shadow-md cursor-pointer select-none active:scale-95"
           >
             <ExternalLink className="w-4 h-4" />
             <span>Tela do Paciente</span>
@@ -725,16 +725,16 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
       <div className="bg-[#FAF8F5] border-2 border-[#C09553]/40 rounded-2xl p-5 sm:p-6 shadow-sm print:hidden relative overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute -top-10 -right-10 opacity-[0.03] pointer-events-none">
-          <Signature className="w-48 h-48 text-[#4E1119]" />
+          <Signature className="w-48 h-48 text-[#8B0000]" />
         </div>
         
         <div className="flex items-start gap-4 relative z-10">
-          <div className="bg-[#4E1119] p-3 rounded-2xl flex-shrink-0 shadow-inner">
+          <div className="bg-[#8B0000] p-3 rounded-2xl flex-shrink-0 shadow-inner">
             <Signature className="w-6 h-6 text-[#C09553]" />
           </div>
           <div className="space-y-3">
             <div>
-              <h3 className="font-serif font-bold text-[#4E1119] text-base leading-none tracking-wide flex items-center gap-2">
+              <h3 className="font-serif font-bold text-[#8B0000] text-base leading-none tracking-wide flex items-center gap-2">
                 Assistente Comercial 
                 <span className="bg-[#C09553] text-[#FAF8F5] text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full tracking-widest translate-y-[-1px] shadow-sm">Ativo</span>
               </h3>
@@ -751,12 +751,12 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                  </div>
                  <div className="space-y-1 text-left md:text-right">
                    <p className="text-[11px] font-bold uppercase text-zinc-500 tracking-wider">Limite Máximo de Parcelas (Sem Juros)</p>
-                   <p className="text-2xl font-bold font-mono text-[#4E1119]">{maxInstallmentsRule}x</p>
+                   <p className="text-2xl font-bold font-mono text-[#8B0000]">{maxInstallmentsRule}x</p>
                  </div>
               </div>
               
               <div className="space-y-3">
-                 <p className="font-bold text-sm text-[#4E1119] flex items-center gap-2">
+                 <p className="font-bold text-sm text-[#8B0000] flex items-center gap-2">
                    <TrendingUp className="w-4 h-4 text-[#C09553]" /> 
                    Roteiro de Negociação Estratégico:
                  </p>
@@ -800,7 +800,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         
         {/* Left Side: Setup Parameters */}
         <div className="lg:col-span-5 bg-white border border-[#E6DEC9] p-5 rounded-2xl shadow-sm space-y-5">
-          <h3 className="font-serif font-bold text-[#4E1119] text-sm tracking-wide uppercase flex items-center gap-2 border-b border-zinc-100 pb-3">
+          <h3 className="font-serif font-bold text-[#8B0000] text-sm tracking-wide uppercase flex items-center gap-2 border-b border-zinc-100 pb-3">
             <CreditCard className="w-4 h-4 text-[#B48C4D]" />
             Configuração da Maquininha
           </h3>
@@ -840,7 +840,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                   <button
                     type="button"
                     onClick={() => setCustomNetDesired(null)}
-                    className="text-[10px] text-[#4E1119] hover:underline flex items-center gap-1"
+                    className="text-[10px] text-[#8B0000] hover:underline flex items-center gap-1"
                   >
                     <Undo2 className="w-3 h-3" /> Restaurar Mapeado ({formatCurrency(calculatedGrossTotal)})
                   </button>
@@ -854,7 +854,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                   step="0.01"
                   value={customNetDesired !== null ? customNetDesired : calculatedGrossTotal}
                   onChange={(e) => setCustomNetDesired(parseFloat(e.target.value) || 0)}
-                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] pl-9 pr-3 py-2 text-sm text-zinc-800 font-bold rounded-lg focus:outline-none focus:border-[#4E1119]"
+                  className="w-full bg-[#FAF8F5] border border-[#D5CBB3] pl-9 pr-3 py-2 text-sm text-zinc-800 font-bold rounded-lg focus:outline-none focus:border-[#8B0000]"
                 />
               </div>
               <p className="text-[10px] text-zinc-400">
@@ -870,7 +870,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
               <select
                 value={salesVolume}
                 onChange={(e) => setSalesVolume(e.target.value as 'under_3' | 'between_3_6')}
-                className="w-full bg-[#FAF8F5] border border-[#D5CBB3] rounded-lg p-2.5 text-xs text-zinc-700 font-semibold focus:outline-none focus:border-[#4E1119]"
+                className="w-full bg-[#FAF8F5] border border-[#D5CBB3] rounded-lg p-2.5 text-xs text-zinc-700 font-semibold focus:outline-none focus:border-[#8B0000]"
               >
                 <option value="under_3">Até R$ 3 mil mensais (Taxas Padrão)</option>
                 <option value="between_3_6">De R$ 3 mil a R$ 6 mil mensais (Melhores Taxas)</option>
@@ -885,7 +885,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
               <select
                 value={cardBrand}
                 onChange={(e) => setCardBrand(e.target.value as 'visa_master' | 'elo_amex')}
-                className="w-full bg-[#FAF8F5] border border-[#D5CBB3] rounded-lg p-2.5 text-xs text-zinc-700 font-semibold focus:outline-none focus:border-[#4E1119]"
+                className="w-full bg-[#FAF8F5] border border-[#D5CBB3] rounded-lg p-2.5 text-xs text-zinc-700 font-semibold focus:outline-none focus:border-[#8B0000]"
               >
                 <option value="visa_master">Visa / Mastercard</option>
                 <option value="elo_amex">Elo / Amex / Outras</option>
@@ -900,7 +900,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
               <select
                 value={installments}
                 onChange={(e) => setInstallments(parseInt(e.target.value) || 12)}
-                className="w-full bg-[#FAF8F5] border border-[#D5CBB3] rounded-lg p-2.5 text-xs text-zinc-700 font-semibold focus:outline-none focus:border-[#4E1119]"
+                className="w-full bg-[#FAF8F5] border border-[#D5CBB3] rounded-lg p-2.5 text-xs text-zinc-700 font-semibold focus:outline-none focus:border-[#8B0000]"
               >
                 <option value={1}>Crédito à vista (1x)</option>
                 {Array.from({ length: 11 }, (_, i) => i + 2).map((num) => (
@@ -931,7 +931,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
               <span className="font-semibold text-zinc-500 uppercase tracking-wider text-[10px]">
                 Prazo de Recebimento:
               </span>
-              <span className="font-bold text-[#4E1119] flex items-center gap-1 font-mono">
+              <span className="font-bold text-[#8B0000] flex items-center gap-1 font-mono">
                 <Calendar className="w-3.5 h-3.5 text-[#B48C4D]" />
                 1 Dia Útil (Conta Ton)
               </span>
@@ -942,7 +942,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
 
         {/* Right Side: Configure Simulation Sliders */}
         <div className="lg:col-span-7 bg-white border border-[#E6DEC9] p-5 rounded-2xl shadow-sm space-y-6">
-          <h3 className="font-serif font-bold text-[#4E1119] text-sm tracking-wide uppercase flex items-center gap-2 border-b border-zinc-100 pb-3">
+          <h3 className="font-serif font-bold text-[#8B0000] text-sm tracking-wide uppercase flex items-center gap-2 border-b border-zinc-100 pb-3">
             <Percent className="w-4 h-4 text-[#B48C4D]" />
             Ajustar Valores de Entrada
           </h3>
@@ -952,11 +952,11 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
             {/* Slider 1 */}
             <div className="space-y-2 bg-[#FAF8F5] p-3 border border-zinc-100 rounded-xl">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-bold text-[#4E1119] uppercase tracking-wide flex items-center gap-1.5">
+                <span className="font-bold text-[#8B0000] uppercase tracking-wide flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-[#B48C4D] rounded-full" />
                   Simulação 1
                 </span>
-                <span className="font-mono font-bold bg-[#FAF8F5] border border-[#D5CBB3] text-[#4E1119] px-2 py-0.5 rounded-md">
+                <span className="font-mono font-bold bg-[#FAF8F5] border border-[#D5CBB3] text-[#8B0000] px-2 py-0.5 rounded-md">
                   {percentSim1}% / {formatCurrency((desiredNet * percentSim1) / 100)}
                 </span>
               </div>
@@ -967,18 +967,18 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                 step="5"
                 value={percentSim1}
                 onChange={(e) => setPercentSim1(parseInt(e.target.value))}
-                className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-[#4E1119]"
+                className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-[#8B0000]"
               />
             </div>
 
             {/* Slider 2 */}
             <div className="space-y-2 bg-[#FAF8F5] p-3 border border-zinc-100 rounded-xl">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-bold text-[#4E1119] uppercase tracking-wide flex items-center gap-1.5">
+                <span className="font-bold text-[#8B0000] uppercase tracking-wide flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-[#B48C4D] rounded-full" />
                   Simulação 2
                 </span>
-                <span className="font-mono font-bold bg-[#FAF8F5] border border-[#D5CBB3] text-[#4E1119] px-2 py-0.5 rounded-md">
+                <span className="font-mono font-bold bg-[#FAF8F5] border border-[#D5CBB3] text-[#8B0000] px-2 py-0.5 rounded-md">
                   {percentSim2}% / {formatCurrency((desiredNet * percentSim2) / 100)}
                 </span>
               </div>
@@ -989,18 +989,18 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                 step="5"
                 value={percentSim2}
                 onChange={(e) => setPercentSim2(parseInt(e.target.value))}
-                className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-[#4E1119]"
+                className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-[#8B0000]"
               />
             </div>
 
             {/* Slider 3: Specific monetary offer */}
             <div className="space-y-2 bg-[#FAF8F5] p-3 border border-zinc-100 rounded-xl">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-bold text-[#4E1119] uppercase tracking-wide flex items-center gap-1.5">
+                <span className="font-bold text-[#8B0000] uppercase tracking-wide flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-[#B48C4D] rounded-full" />
                   Entrada da Oferta do Paciente
                 </span>
-                <span className="font-mono font-bold bg-[#FAF8F5] border border-[#D5CBB3] text-[#4E1119] px-2 py-0.5 rounded-md">
+                <span className="font-mono font-bold bg-[#FAF8F5] border border-[#D5CBB3] text-[#8B0000] px-2 py-0.5 rounded-md">
                   {desiredNet > 0 ? `${Math.round((patientOfferInput / desiredNet) * 100)}%` : '0%'}
                 </span>
               </div>
@@ -1012,7 +1012,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                   max={desiredNet}
                   value={patientOfferInput}
                   onChange={(e) => setPatientOfferInput(parseFloat(e.target.value) || 0)}
-                  className="w-full bg-white border border-[#D5CBB3] pl-8 pr-3 py-1.5 text-xs text-zinc-800 font-bold rounded-lg focus:outline-none focus:border-[#4E1119]"
+                  className="w-full bg-white border border-[#D5CBB3] pl-8 pr-3 py-1.5 text-xs text-zinc-800 font-bold rounded-lg focus:outline-none focus:border-[#8B0000]"
                 />
               </div>
             </div>
@@ -1025,7 +1025,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
       {/* ================= SIMULATION CALCULATOR GRID ================= */}
       <div className="bg-white border border-[#E6DEC9] rounded-2xl p-5 sm:p-6 shadow-sm space-y-5 print:hidden">
         <div>
-          <h4 className="font-serif font-bold text-[#4E1119] text-sm tracking-tight uppercase flex items-center gap-1.5">
+          <h4 className="font-serif font-bold text-[#8B0000] text-sm tracking-tight uppercase flex items-center gap-1.5">
             <Coins className="w-4 h-4 text-[#B48C4D]" />
             Simulador de Entrada Inteligente (Comparativo)
           </h4>
@@ -1059,7 +1059,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                 <div className="space-y-3.5">
                   <div className="text-center font-sans">
                     <span className="text-[10px] font-bold text-zinc-400 tracking-wider uppercase block">{sim.label}</span>
-                    <strong className="text-sm font-serif text-[#4E1119] block mt-0.5">{sim.name}</strong>
+                    <strong className="text-sm font-serif text-[#8B0000] block mt-0.5">{sim.name}</strong>
                   </div>
 
                   <div className="divide-y divide-zinc-100 font-sans text-xs">
@@ -1098,14 +1098,14 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                     {/* Parcellation value detail */}
                     <div className="py-2 text-center bg-zinc-50 border border-zinc-100/50 rounded-lg my-1">
                       <span className="text-[10px] text-zinc-400 uppercase tracking-wide block">Valor da Parcela ({installments}x)</span>
-                      <strong className="text-sm font-bold text-[#4E1119] block font-mono mt-0.5">
+                      <strong className="text-sm font-bold text-[#8B0000] block font-mono mt-0.5">
                         {installments}x de {formatCurrency(sim.valorParcela)}
                       </strong>
                     </div>
 
                     {/* Total paid by Patient */}
                     <div className="py-1.5 flex justify-between items-center bg-[#F5EFE3]/30 px-1 rounded">
-                      <span className="text-[#4E1119] font-bold text-[10px] uppercase tracking-wide">CUSTO DO PACIENTE:</span>
+                      <span className="text-[#8B0000] font-bold text-[10px] uppercase tracking-wide">CUSTO DO PACIENTE:</span>
                       <strong className="text-zinc-900 font-mono font-bold text-xs">{formatCurrency(sim.custoTotal)}</strong>
                     </div>
 
@@ -1139,7 +1139,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                     type="checkbox"
                     checked={showInPatientScreen[index] || false}
                     onChange={() => {}} // handled by parent onClick
-                    className="w-4 h-4 rounded-md text-[#4E1119] border-zinc-300 focus:ring-[#4E1119] accent-[#4E1119] cursor-pointer"
+                    className="w-4 h-4 rounded-md text-[#8B0000] border-zinc-300 focus:ring-[#8B0000] accent-[#8B0000] cursor-pointer"
                   />
                 </div>
 
@@ -1147,7 +1147,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
                   type="button"
                   className={`w-full mt-3 py-2 font-bold text-[10px] uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center font-sans ${
                     isSelected
-                      ? 'bg-[#4E1119] text-[#FAF8F5]'
+                      ? 'bg-[#8B0000] text-[#FAF8F5]'
                       : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200'
                   }`}
                 >
@@ -1162,7 +1162,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         <div className="bg-[#FAF8F5] border border-[#E6DEC9] p-3.5 rounded-xl flex items-start gap-2.5 text-xs text-zinc-500 leading-normal">
           <HelpCircle className="w-4 h-4 text-[#B48C4D] flex-shrink-0 mt-0.5" />
           <p>
-            * Taxa aplicada pela maquininha Ton para a bandeira <strong>{cardBrand === 'visa_master' ? 'Visa / Mastercard' : 'Elo / Amex'}</strong> em <strong>{installments} parcelas</strong> é de <strong>{machineFeePercent}%</strong>. O cálculo do valor cobrado utiliza a fórmula financeira reversa precisa repassando a taxa: <code className="bg-[#F5EFE3] px-1 py-0.5 rounded text-[#4E1119] font-mono text-[11px]">Restante / (1 - Taxa)</code>, garantindo que o cirurgião receba exatamente o valor líquido desejado estabelecido.
+            * Taxa aplicada pela maquininha Ton para a bandeira <strong>{cardBrand === 'visa_master' ? 'Visa / Mastercard' : 'Elo / Amex'}</strong> em <strong>{installments} parcelas</strong> é de <strong>{machineFeePercent}%</strong>. O cálculo do valor cobrado utiliza a fórmula financeira reversa precisa repassando a taxa: <code className="bg-[#F5EFE3] px-1 py-0.5 rounded text-[#8B0000] font-mono text-[11px]">Restante / (1 - Taxa)</code>, garantindo que o cirurgião receba exatamente o valor líquido desejado estabelecido.
           </p>
         </div>
       </div>
@@ -1205,7 +1205,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         {/* Clinica Logo and Monogram Header Block */}
         <div className="border-b border-[#C09553]/40 pb-4 mb-4 flex justify-between items-start gap-3">
           <div className="space-y-1.5 flex-1">
-            <h2 className="text-xl font-serif text-[#4E1119] font-bold uppercase tracking-tight leading-tight">
+            <h2 className="text-xl font-serif text-[#8B0000] font-bold uppercase tracking-tight leading-tight">
               Plano de Tratamento & Condições de Pagamento
             </h2>
             <div className="text-xs text-zinc-600 font-sans mt-0.5 flex flex-col gap-1.5">
@@ -1226,7 +1226,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
           </div>
           
           {/* Circular Clinica Brand seal matching the official AF Logo */}
-          <div className="w-14 h-14 rounded-full bg-[#4E1119] flex items-center justify-center border border-[#C09553]/30 flex-shrink-0 shadow-sm mt-1">
+          <div className="w-14 h-14 rounded-full bg-[#8B0000] flex items-center justify-center border border-[#C09553]/30 flex-shrink-0 shadow-sm mt-1">
             <svg viewBox="0 0 100 100" className="w-9 h-9 text-[#FAF8F5]">
               {/* Left Diagonal of A */}
               <path d="M 36 75 L 49 31" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -1245,7 +1245,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         {/* Procedure List Summary Table (Very Compact to fit 1 page) */}
         <div className="space-y-3 no-print-break">
           <div className="flex justify-between items-center border-b border-zinc-100 pb-1">
-            <h4 className="text-[10px] font-bold text-[#4E1119] uppercase tracking-wider">
+            <h4 className="text-[10px] font-bold text-[#8B0000] uppercase tracking-wider">
               Diagnóstico de Mapeamento Clínico (Procedimentos Necessários)
             </h4>
             <span className="text-[10px] font-mono text-zinc-500 font-bold">
@@ -1261,7 +1261,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse font-sans text-xs">
                 <thead>
-                  <tr className="border-b border-[#E6DEC9]/40 bg-[#FAF8F5] text-[#4E1119]">
+                  <tr className="border-b border-[#E6DEC9]/40 bg-[#FAF8F5] text-[#8B0000]">
                     <th className="py-1 px-2.5 font-bold text-[10px] uppercase w-16">Dente</th>
                     <th className="py-1 px-2.5 font-bold text-[10px] uppercase">Procedimento Clínico Mapeado</th>
                     <th className="py-1 px-2.5 font-bold text-[10px] uppercase text-right w-24">Valor Original</th>
@@ -1294,7 +1294,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
           return (
             <div className="mt-4 no-print-break space-y-2">
               <div className="border-b border-zinc-100 pb-1">
-                <h4 className="text-[10px] font-bold text-[#4E1119] uppercase tracking-wider">
+                <h4 className="text-[10px] font-bold text-[#8B0000] uppercase tracking-wider">
                   Registro de Mapeamento Clínico Visual (Fotos do Planejamento)
                 </h4>
               </div>
@@ -1403,7 +1403,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
             <span className="text-[9px] font-extrabold text-[#B48C4D] tracking-widest uppercase block">
               Proposta Comercial Acordada & Facilitada
             </span>
-            <strong className="text-sm font-serif text-[#4E1119] block mt-0.5">
+            <strong className="text-sm font-serif text-[#8B0000] block mt-0.5">
               Condições de Parcelamento Inteligente via Maquininha ({chosenSim.name})
             </strong>
           </div>
@@ -1427,10 +1427,10 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
             </div>
 
             <div className="col-span-2 bg-[#F5EFE3] border border-[#D5CBB3] p-2.5 rounded-lg flex justify-between items-center">
-              <span className="text-[#4E1119] font-bold text-[10.5px] uppercase tracking-wider block">
+              <span className="text-[#8B0000] font-bold text-[10.5px] uppercase tracking-wider block">
                 Acordo de Desembolso Mensal:
               </span>
-              <span className="text-sm font-bold text-[#4E1119] font-mono whitespace-nowrap bg-white border border-[#D5CBB3] px-2 py-0.5 rounded-md">
+              <span className="text-sm font-bold text-[#8B0000] font-mono whitespace-nowrap bg-white border border-[#D5CBB3] px-2 py-0.5 rounded-md">
                 {installments}x de {formatCurrency(chosenSim.valorParcela)}
               </span>
             </div>
@@ -1440,7 +1440,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
           <div className="md:col-span-4 bg-white border border-[#E6DEC9] p-3 rounded-lg text-center font-sans space-y-1.5 flex flex-col justify-center h-full">
             <div>
               <span className="text-[9px] text-zinc-400 uppercase tracking-wider block">Custo Final do Paciente</span>
-              <strong className="text-base text-[#4E1119] font-mono font-extrabold block">
+              <strong className="text-base text-[#8B0000] font-mono font-extrabold block">
                 {formatCurrency(chosenSim.custoTotal)}
               </strong>
             </div>
@@ -1505,7 +1505,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         {/* Quick View of Patient Destination */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div className="bg-white border border-zinc-200 rounded-xl p-4 space-y-2.5">
-            <div className="text-[10px] font-bold text-[#4E1119] uppercase tracking-wider text-left">📋 Informações de Envio</div>
+            <div className="text-[10px] font-bold text-[#8B0000] uppercase tracking-wider text-left">📋 Informações de Envio</div>
             <div className="grid grid-cols-3 gap-y-1.5 text-zinc-600">
               <span className="font-bold text-left">Destinatário:</span>
               <span className="col-span-2 text-zinc-800 text-left font-semibold">{proposal.patientName || 'Não Informado'}</span>
@@ -1526,7 +1526,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
           <div className="bg-white border border-zinc-200 rounded-xl p-4 flex flex-col justify-between">
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold text-[#4E1119] uppercase tracking-wider text-left">⚙️ Configurações Técnicas</span>
+                <span className="text-[10px] font-bold text-[#8B0000] uppercase tracking-wider text-left">⚙️ Configurações Técnicas</span>
                 <button
                   type="button"
                   onClick={() => setShowConfigPanel(!showConfigPanel)}
@@ -1542,7 +1542,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
 
             {/* Tiny badges info */}
             <div className="flex items-center gap-2 mt-3 flex-wrap">
-              <span className="bg-[#4E1119]/5 text-[#4E1119] px-2 py-0.5 rounded-md text-[9.5px] font-bold font-mono font-sans">Format: PDF/A4</span>
+              <span className="bg-[#8B0000]/5 text-[#8B0000] px-2 py-0.5 rounded-md text-[9.5px] font-bold font-mono font-sans">Format: PDF/A4</span>
               <span className="bg-zinc-100 text-[#C09553] px-2 py-0.5 rounded-md text-[9.5px] font-bold font-mono font-sans">GDrive Auth: OK</span>
               <span className="bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded-md text-[9.5px] font-bold font-mono font-sans">Status: Pronto</span>
             </div>
@@ -1552,7 +1552,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         {/* Config / Credential parameters collapsible panel */}
         {showConfigPanel && (
           <div className="bg-white border border-[#D5CBB3] rounded-xl p-4 space-y-4 animate-fade-in text-xs text-left">
-            <h5 className="font-bold text-[#4E1119] text-xs">🛠️ Parâmetros do Gateway do WhatsApp Business API</h5>
+            <h5 className="font-bold text-[#8B0000] text-xs">🛠️ Parâmetros do Gateway do WhatsApp Business API</h5>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
@@ -1711,7 +1711,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
       <div className="mt-8 mb-16 flex flex-col sm:flex-row gap-4 justify-center print:hidden">
         <button
           onClick={handlePrint}
-          className="flex items-center justify-center gap-2 bg-[#4E1119] hover:bg-[#6c1b26] text-white font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-md cursor-pointer"
+          className="flex items-center justify-center gap-2 bg-[#8B0000] hover:bg-[#6c1b26] text-white font-bold text-sm px-8 py-4 rounded-xl transition-all shadow-md cursor-pointer"
         >
           <Printer className="w-5 h-5" />
           <span>Exportar PDF / Imprimir</span>
@@ -1737,7 +1737,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/75 backdrop-blur-xs animate-fade-in print:hidden">
           <div className="bg-[#FAF8F5] border-2 border-[#C09553] rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl relative">
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#4E1119] to-[#2D060B] text-white p-5 flex justify-between items-center border-b border-[#C09553]/30">
+            <div className="bg-gradient-to-r from-[#8B0000] to-[#2D060B] text-white p-5 flex justify-between items-center border-b border-[#C09553]/30">
               <div className="flex items-center gap-2.5">
                 <AlertCircle className="w-5 h-5 text-[#C09553]" />
                 <h3 className="font-serif font-semibold text-sm tracking-wide uppercase">Como Exportar o Acordo em PDF</h3>
@@ -1754,25 +1754,25 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
             {/* Content Body */}
             <div className="p-6 space-y-4 text-zinc-700 leading-relaxed text-sm">
               <p className="text-zinc-600 font-medium">
-                Detectamos que você está utilizando o app dentro do <strong className="text-[#4E1119]">painel interno de preview do editor</strong>. Por segurança, os navegadores impedem a geração de PDF diretamente de quadros incorporados (iframes).
+                Detectamos que você está utilizando o app dentro do <strong className="text-[#8B0000]">painel interno de preview do editor</strong>. Por segurança, os navegadores impedem a geração de PDF diretamente de quadros incorporados (iframes).
               </p>
 
               <div className="bg-[#F5EFE3] border border-[#D5CBB3] p-4 rounded-xl space-y-3">
-                <span className="font-bold text-xs text-[#4E1119] uppercase tracking-wide block">
+                <span className="font-bold text-xs text-[#8B0000] uppercase tracking-wide block">
                   Siga estes passos simples:
                 </span>
                 <ol className="list-decimal pl-5 space-y-2 text-xs md:text-sm text-zinc-700 font-medium font-sans">
                   <li>
-                    Clique no botão <span className="bg-white border border-[#D5CBB3] px-1.5 py-0.5 rounded-md font-bold text-xs inline-flex items-center gap-1 shadow-2xs text-[#4E1119]">Abrir em Nova Aba <ExternalLink className="w-3 h-3" /></span> localizado no <strong>topo superior direito da tela de preview</strong> do AI Studio.
+                    Clique no botão <span className="bg-white border border-[#D5CBB3] px-1.5 py-0.5 rounded-md font-bold text-xs inline-flex items-center gap-1 shadow-2xs text-[#8B0000]">Abrir em Nova Aba <ExternalLink className="w-3 h-3" /></span> localizado no <strong>topo superior direito da tela de preview</strong> do AI Studio.
                   </li>
                   <li>
-                    Na nova aba aberta que exibe seu aplicativo em tela cheia, clique novamente no botão <strong className="text-[#4E1119]">Exportar PDF em 1 Página</strong>.
+                    Na nova aba aberta que exibe seu aplicativo em tela cheia, clique novamente no botão <strong className="text-[#8B0000]">Exportar PDF em 1 Página</strong>.
                   </li>
                   <li>
-                    No assistente de impressão do seu navegador, escolha a opção <strong className="text-[#4E1119]">"Salvar como PDF"</strong> ou selecione a sua impressora física.
+                    No assistente de impressão do seu navegador, escolha a opção <strong className="text-[#8B0000]">"Salvar como PDF"</strong> ou selecione a sua impressora física.
                   </li>
                   <li>
-                    <strong className="text-[#C09553]">Dica Importante:</strong> Certifique-se de ativar a caixa <strong className="text-[#4E1119]">"Gráficos de plano de fundo" (Background graphics)</strong> nas configurações para que as fotos dos dentes e as bolinhas coloridas apareçam no documento final!
+                    <strong className="text-[#C09553]">Dica Importante:</strong> Certifique-se de ativar a caixa <strong className="text-[#8B0000]">"Gráficos de plano de fundo" (Background graphics)</strong> nas configurações para que as fotos dos dentes e as bolinhas coloridas apareçam no documento final!
                   </li>
                 </ol>
               </div>
@@ -1794,7 +1794,7 @@ Qualquer dúvida ou para confirmar o início, me envie uma mensagem por aqui!`;
               <button
                 type="button"
                 onClick={() => setShowIframeHelp(false)}
-                className="order-1 sm:order-2 bg-[#4E1119] hover:bg-[#6c1b26] text-white font-bold text-xs px-6 py-2.5 rounded-lg transition-colors shadow-md cursor-pointer text-center"
+                className="order-1 sm:order-2 bg-[#8B0000] hover:bg-[#6c1b26] text-white font-bold text-xs px-6 py-2.5 rounded-lg transition-colors shadow-md cursor-pointer text-center"
               >
                 Entendi, vou para a nova aba!
               </button>

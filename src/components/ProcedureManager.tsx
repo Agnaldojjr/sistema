@@ -98,7 +98,7 @@ export default function ProcedureManager({
       {/* Header */}
       <div className="bg-gradient-to-r from-[#FAF8F5] to-[#F3EFE9] border-b border-[#E6DEC9] px-5 py-4 flex justify-between items-center select-none">
         <div>
-          <h2 className="text-sm font-semibold text-[#4E1119] tracking-wider uppercase">
+          <h2 className="text-sm font-semibold text-[#8B0000] tracking-wider uppercase">
             Catálogo de Procedimentos
           </h2>
           <p className="text-[11px] text-[#B48C4D] font-medium">
@@ -108,7 +108,7 @@ export default function ProcedureManager({
         <button
           id="btn-reset-procedures"
           onClick={onResetProcedures}
-          className="flex items-center gap-1 text-[11px] font-medium text-[#B48C4D] hover:text-[#4E1119] transition-colors"
+          className="flex items-center gap-1 text-[11px] font-medium text-[#B48C4D] hover:text-[#8B0000] transition-colors"
           title="Restaurar tabela padrão original"
         >
           <RotateCcw className="w-3 h-3" />
@@ -135,7 +135,7 @@ export default function ProcedureManager({
                 placeholder="Ex: Restauração Resina 1 Face"
                 value={newNombre}
                 onChange={(e) => setNewNombre(e.target.value)}
-                className="w-full bg-white border border-zinc-200 focus:border-[#4E1119] focus:ring-1 focus:ring-[#4E1119] rounded-lg px-3 py-1.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none transition-all"
+                className="w-full bg-white border border-zinc-200 focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] rounded-lg px-3 py-1.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none transition-all"
               />
             </div>
 
@@ -153,7 +153,7 @@ export default function ProcedureManager({
                   placeholder="Valor (R$)"
                   value={newValor}
                   onChange={(e) => setNewValor(e.target.value)}
-                  className="w-full bg-white border border-zinc-200 focus:border-[#4E1119] focus:ring-1 focus:ring-[#4E1119] rounded-lg pl-8 pr-2.5 py-1.5 text-xs font-mono text-zinc-800 focus:outline-none transition-all"
+                  className="w-full bg-white border border-zinc-200 focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] rounded-lg pl-8 pr-2.5 py-1.5 text-xs font-mono text-zinc-800 focus:outline-none transition-all"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function ProcedureManager({
                     type="button"
                     onClick={() => setNewColor(color)}
                     className={`w-5 h-5 rounded-full flex-shrink-0 border-2 transition-transform ${
-                      newColor === color ? 'border-[#4E1119] scale-125 shadow-sm' : 'border-transparent hover:scale-110'
+                      newColor === color ? 'border-[#8B0000] scale-125 shadow-sm' : 'border-transparent hover:scale-110'
                     }`}
                     style={{ backgroundColor: color }}
                     title={`Cor ${color}`}
@@ -178,7 +178,7 @@ export default function ProcedureManager({
             <button
               id="btn-submit-proc"
               type="submit"
-              className="w-full bg-[#4E1119] hover:bg-[#6c1b26] text-white text-xs font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-sm"
+              className="w-full bg-[#8B0000] hover:bg-[#6c1b26] text-white text-xs font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-sm"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Adicionar ao Catálogo</span>
@@ -216,7 +216,7 @@ export default function ProcedureManager({
                             type="text"
                             value={editNombre}
                             onChange={(e) => setEditNombre(e.target.value)}
-                            className="flex-1 bg-white border border-amber-300 focus:border-[#4E1119] rounded px-2 py-1 text-xs"
+                            className="flex-1 bg-white border border-amber-300 focus:border-[#8B0000] rounded px-2 py-1 text-xs"
                           />
                         </div>
                         <div className="flex justify-between items-center gap-2">
@@ -226,7 +226,7 @@ export default function ProcedureManager({
                               type="number"
                               value={editValor}
                               onChange={(e) => setEditValor(parseFloat(e.target.value) || 0)}
-                              className="w-24 bg-white border border-amber-300 focus:border-[#4E1119] rounded px-2 py-1 text-xs font-mono"
+                              className="w-24 bg-white border border-amber-300 focus:border-[#8B0000] rounded px-2 py-1 text-xs font-mono"
                             />
                           </div>
                           {/* Inline color editor presets */}
