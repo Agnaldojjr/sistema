@@ -1,0 +1,10 @@
+{
+  "name": "Remix: Planejador de Tratamento Odontológico",
+  "description": "Sistema Consultório odontológico Dr.Agnaldo Ferreira",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

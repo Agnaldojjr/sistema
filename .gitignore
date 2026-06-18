@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local backups and imports containing patient data
+backup_bluedental_20260616_142151/
+consolidated_crm_import.json
+consolidate_bluedental.cjs

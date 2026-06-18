@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+  }
+
+  body {
+    background-color: #FAF8F5 !important;
+  }
+
+  /* Ensure correct absolute positioning visibility for tooth markers */
+  .absolute {
+    position: absolute !important;
+  }
+}

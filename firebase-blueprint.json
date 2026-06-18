@@ -1,0 +1,110 @@
+{
+  "entities": {
+    "Patient": {
+      "title": "Patient",
+      "description": "Patient registration details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier, same as patient ID or auto ID" },
+        "codigo_paciente": { "type": "string", "description": "Legacy client code (e.g. codigo_cliente)" },
+        "name": { "type": "string", "description": "Full name of the patient" },
+        "phone": { "type": "string", "description": "Landline phone number" },
+        "mobile": { "type": "string", "description": "Mobile phone number" },
+        "healthInsurance": { "type": "string", "description": "Insurance operator name or PARTICULAR" },
+        "healthInsuranceCard": { "type": "string", "description": "Insurance membership card number" },
+        "healthInsuranceValidity": { "type": "string", "description": "Validity format MM/AAAA" },
+        "observations": { "type": "string", "description": "Overall patient caveats and observations" },
+        "medicalRecord": { "type": "string", "description": "Medical record number / Prontuario" },
+        "birthDate": { "type": "string", "description": "Birth date YYYY-MM-DD" },
+        "gender": { "type": "string", "description": "Gender option" },
+        "status": { "type": "string", "description": "ATIVO or INATIVO" },
+        "maritalStatus": { "type": "string", "description": "Marital status" },
+        "cpf": { "type": "string", "description": "CPF identity number" },
+        "rg": { "type": "string", "description": "RG identity number" },
+        "rgIssuer": { "type": "string", "description": "RG Issuer details" },
+        "email": { "type": "string", "description": "Contact email address" },
+        "street": { "type": "string", "description": "Address street" },
+        "number": { "type": "string", "description": "Address number" },
+        "complement": { "type": "string", "description": "Address complement" },
+        "neighborhood": { "type": "string", "description": "Address neighborhood" },
+        "city": { "type": "string", "description": "Address city" },
+        "state": { "type": "string", "description": "Address state" },
+        "cep": { "type": "string", "description": "Address CEP zip code" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "Appointment booking history details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "patientId": { "type": "string", "description": "Associated patient ID reference" },
+        "patientName": { "type": "string", "description": "Denormalized patient name for fast views" },
+        "date": { "type": "string", "description": "Date of appointment YYYY-MM-DD" },
+        "time": { "type": "string", "description": "Time of appointment HH:MM" },
+        "dentist": { "type": "string", "description": "Dentist name" },
+        "specialty": { "type": "string", "description": "Doctor specialty" },
+        "status": { "type": "string", "enum": ["Agendado", "Confirmado", "Atendido", "Faltou", "Cancelado"] },
+        "room": { "type": "string", "description": "Clinic room" },
+        "clinic": { "type": "string", "description": "Dental clinic branch" },
+        "observations": { "type": "string", "description": "Specific appointment reservation text" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId", "date"]
+    },
+    "ClinicalHistory": {
+      "title": "ClinicalHistory",
+      "description": "Procedures, evolution, and medical history documents",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "patientId": { "type": "string" },
+        "date": { "type": "string", "description": "Clinical event date" },
+        "proceduresPerformed": { "type": "string", "description": "List of procedures performed" },
+        "treatmentEvolution": { "type": "string", "description": "Diagnostic and treating tracking log" },
+        "recalls": { "type": "string", "description": "Calculated recalls/retornos description" },
+        "observations": { "type": "string", "description": "Evolution clinical note" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId"]
+    },
+    "Communication": {
+      "title": "Communication",
+      "description": "Patient communication, alerts and followups logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "patientId": { "type": "string" },
+        "type": { "type": "string", "description": "Confirmação, Lembrete" },
+        "date": { "type": "string" },
+        "message": { "type": "string" },
+        "token": { "type": "string", "description": "Confirmation hash token" },
+        "status": { "type": "string", "description": "Enviado, Respondido, Confirmado" },
+        "contactsHistory": { "type": "string", "description": "Stringified lists or description of contacts" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId"]
+    }
+  },
+  "firestore": {
+    "patients": {
+      "schema": "Patient",
+      "description": "Patients records directory"
+    },
+    "appointments": {
+      "schema": "Appointment",
+      "description": "Clinic appointments schedule history"
+    },
+    "clinical_history": {
+      "schema": "ClinicalHistory",
+      "description": "Patient procedures and clinical evolution notes"
+    },
+    "communications": {
+      "schema": "Communication",
+      "description": "Communications and confirmation statistics log"
+    }
+  }
+}
